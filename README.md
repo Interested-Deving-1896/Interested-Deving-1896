@@ -1,53 +1,88 @@
-<h1 align="center">Hi 👋, I'm Interested Deving</h1>
-<h3 align="center">Deving For The Future</h3>
+<!-- AI:skip -->
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=Interested-Deving-1896&label=Profile%20views&color=0e75b6&style=flat" alt="Interested-Deving-1896" /> </p>
+# Interested Deving
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=Interested-Deving-1896&theme=darkhub" alt="Interested-Deving-1896" /></a> </p>
+**Deving for the future.**
 
-- 🔭 I'm currently working on **[BlacksmithOS](https://github.com/Interested-Deving-1896/BlacksmithOS)**
+Open-source systems engineering across Linux, automation, containers,
+accessibility, AI-assisted tooling, and reproducible infrastructure.
 
-- 🌱 I'm currently learning **Rust, Incus/LXC & ChromiumOS**
+[Source workspace](https://github.com/Interested-Deving-1896) ·
+[OSP mirror](https://github.com/OpenOS-Project-OSP) ·
+[OOC ecosystem](https://github.com/OpenOS-Project-Ecosystem-OOC) ·
+[GitLab mirrors](https://gitlab.com/openos-project)
 
-- 👯 I'm looking to collaborate on **[penguins-recovery](https://github.com/Interested-Deving-1896/penguins-recovery)**
+## Open engineering workspace
 
-- 💬 Ask me about **Linux, Go, Shell scripting, Containers (Incus/LXC)**
+`Interested-Deving-1896` is the source workspace for the OpenOS Project
+ecosystem. It brings together original projects, integration layers,
+infrastructure automation, and curated upstream mirrors with a common goal:
+make open systems easier to build, operate, recover, and adapt across platforms.
 
-- 📫 How to reach me **[https://linktr.ee/OpenOS_Project](https://linktr.ee/OpenOS_Project)**
+Work is source-first here. Downstream GitHub and GitLab copies provide
+continuity, wider access, and independently verifiable mirrors.
 
-- ⚡ Fun fact **DEV-ING OR DEV'ING . . . ?**
+## Current focus
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://github.com/Interested-Deving-1896" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="Interested-Deving-1896" height="30" width="40" /></a>
-<a href="https://linktr.ee/OpenOS_Project" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/lc.svg" alt="OpenOS_Project" height="30" width="40" /></a>
-</p>
+| Area | What is being built |
+|---|---|
+| Linux lifecycle | Image building, live systems, recovery, immutable-system patterns, OTA updates, kernels, and filesystems |
+| Platform-agnostic automation | Common HTTP and CLI interfaces across filesystems, Git platforms, browsers, operating systems, and AI backends |
+| Containers and virtual machines | Incus/LXC tooling, image infrastructure, deployment helpers, and cross-platform workflows |
+| Developer infrastructure | Repository orchestration, CI recovery, observability, documentation, and multi-forge synchronization |
+| Accessibility | Assistive technology, accessible documentation, WCAG auditing, Braille, and text-to-speech tooling |
+| AI-assisted engineering | Practical agents for diagnostics, guided builds, repository maintenance, and project knowledge |
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left">
-<a href="https://go.dev" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=go" alt="go" width="40" height="40"/> </a>
-<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=py" alt="python" width="40" height="40"/> </a>
-<a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=bash" alt="bash" width="40" height="40"/> </a>
-<a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=c" alt="c" width="40" height="40"/> </a>
-<a href="https://isocpp.org/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=cpp" alt="cplusplus" width="40" height="40"/> </a>
-<a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=rust" alt="rust" width="40" height="40"/> </a>
-<a href="https://doc.qt.io/qt-6/qmlapplications.html" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=qt" alt="qml" width="40" height="40"/> </a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=js" alt="javascript" width="40" height="40"/> </a>
-<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=nodejs" alt="nodejs" width="40" height="40"/> </a>
-<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=ts" alt="typescript" width="40" height="40"/> </a>
-<a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=linux" alt="linux" width="40" height="40"/> </a>
-<a href="https://www.chromium.org/chromium-os/" target="_blank" rel="noreferrer"> <img src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="chromiumos" width="40" height="40"/> </a>
-<a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=androidstudio" alt="android" width="40" height="40"/> </a>
-<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=git" alt="git" width="40" height="40"/> </a>
-<a href="https://linuxcontainers.org/incus/" target="_blank" rel="noreferrer"> <img src="https://cdn.simpleicons.org/linuxcontainers/333333" alt="incus-lxc-lxd" width="40" height="40"/> </a>
-</p>
+## Start here
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=Interested-Deving-1896&show_icons=true&locale=en&layout=compact&theme=dark" alt="Interested-Deving-1896" /></p>
+| Project | Purpose |
+|---|---|
+| [`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all) | Control plane for repository mirroring, upstream sync, maintenance workflows, documentation, and cross-forge operations |
+| [`unified-agnostic-api`](https://github.com/Interested-Deving-1896/unified-agnostic-api) | Shell-first HTTP and CLI layer for filesystem, GitHub, browser, OS, and AI backends |
+| [`eggs-ai`](https://github.com/Interested-Deving-1896/eggs-ai) | AI agent for Penguins Eggs diagnostics, guided ISO building, configuration, and knowledge-base Q&A |
+| [`penguins-eggs-integrations`](https://github.com/Interested-Deving-1896/penguins-eggs-integrations) | Integration plugins connecting Penguins Eggs with projects across the wider ecosystem |
+| [`infra-dashboard`](https://github.com/Interested-Deving-1896/infra-dashboard) | Operational dashboards and supporting services for infrastructure visibility |
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=Interested-Deving-1896&show_icons=true&locale=en&theme=dark" alt="Interested-Deving-1896" /></p>
+Explore the [repositories](https://github.com/Interested-Deving-1896?tab=repositories)
+for the full workspace. Source repositories and tracked upstream projects evolve
+quickly, so each repository README remains the authority for its own status and
+usage.
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Interested-Deving-1896&theme=dark" alt="Interested-Deving-1896" /></p>
+## Fork-Sync-All mirror chain 🪞
+
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all)
+maintains the outward mirror chain and verifies drift between its GitHub and
+GitLab destinations.
+
+```text
+Interested-Deving-1896/<repo>                  source
+              │
+              ▼
+OpenOS-Project-OSP/<repo>                      operational mirror
+              ├──────────► gitlab.com/openos-project/<subgroup>/<repo>
+              │
+              ▼
+OpenOS-Project-Ecosystem-OOC/<repo>            ecosystem mirror
+              └──────────► gitlab.com/openos-project-ooc-ecosystem/<subgroup>/<repo>
+```
+
+Open issues and pull requests against the source repository unless a mirror
+explicitly says otherwise. Mirror copies are continuity endpoints and may be
+force-synchronized from their upstream source.
+
+## Working principles
+
+- Prefer open formats, inspectable automation, and reproducible workflows.
+- Design for more than one distribution, runtime, forge, or deployment target.
+- Treat accessibility, recovery, documentation, and operability as core features.
+- Preserve upstream attribution and make the direction of synchronization clear.
+
+## Connect
+
+- GitHub: [@Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+- OpenOS Project links: [linktr.ee/OpenOS_Project](https://linktr.ee/OpenOS_Project)
+- Contributions: use the issue tracker or pull requests in the relevant source repository
 
 ---
 
-[![Build with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/Interested-Deving-1896)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/Interested-Deving-1896)
