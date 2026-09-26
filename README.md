@@ -77,6 +77,25 @@ force-synchronized from their upstream source.
 - Treat accessibility, recovery, documentation, and operability as core features.
 - Preserve upstream attribution and make the direction of synchronization clear.
 
+## Mascot and digital cosplay 📖
+
+The Mirrorchain has two fictional creative representatives:
+
+- **Relay** *(working title)* is an independent ecosystem mascot embodying
+  openness, resilience, accessibility, and continuity across the source, OSP,
+  and OOC layers.
+- **Nexus, the Mirrorchain Weaver** *(working title)* is the digital cosplay
+  persona used by Interested-Deving-1896 for character studies and
+  open-source worldbuilding.
+
+[Meet the characters](characters/README.md) ·
+[Explore the Mirrorchain lore](characters/lore/MIRRORCHAIN.md) ·
+[Read the creative provenance](characters/PROVENANCE.md)
+
+> These characters and stories are fictional creative works. They are separate
+> from technical documentation and do not assert real-world affiliations,
+> operations, or identities.
+
 ## Connect
 
 - GitHub: [@Interested-Deving-1896](https://github.com/Interested-Deving-1896)
