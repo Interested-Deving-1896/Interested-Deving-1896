@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Nexus digital cosplay costume reference sheet</title>
+  <desc id="desc">Three face-neutral Nexus costumes: amber Source Weaver with notebook threads, cyan Mirror Keeper with comparison prism, and violet Ecosystem Wayfinder with connected star map.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#020617" flood-opacity="0.22"/>
+    </filter>
+    <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <g id="nexus-base">
+      <path d="M-67-150Q0-203 67-150L58-68Q0-34-58-68Z" fill="#111827" stroke="#e5e7eb" stroke-width="9"/>
+      <path d="M-48-135Q0-163 48-135L42-91Q0-68-42-91Z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="6"/>
+      <path d="M-92-50L-145 40L-105 72L-66 18" fill="#1e293b" stroke="#e5e7eb" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M92-50L145 40L105 72L66 18" fill="#1e293b" stroke="#e5e7eb" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M-76-58Q0-88 76-58L104 222Q0 266-104 222Z" fill="url(#coat)" stroke="#e5e7eb" stroke-width="9"/>
+      <path d="M0-54V220M-70 30Q0 62 70 30M-86 132Q0 168 86 132" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+      <path d="M-74 222L-55 342H-4L0 226M74 222L55 342H4L0 226" fill="#1e293b" stroke="#e5e7eb" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M-72 342H-4M4 342H72" stroke="#0f172a" stroke-width="20" stroke-linecap="round"/>
+      <g transform="translate(0 -23)">
+        <circle cx="-25" cy="0" r="9" fill="#f4b942" stroke="#f8fafc" stroke-width="3"/>
+        <circle cx="0" cy="0" r="9" fill="#36c5f0" stroke="#f8fafc" stroke-width="3"/>
+        <circle cx="25" cy="0" r="9" fill="#a78bfa" stroke="#f8fafc" stroke-width="3"/>
+        <path d="M-16 0H-9M9 0H16" stroke="#f8fafc" stroke-width="3"/>
+      </g>
+    </g>
+  </defs>
+
+  <rect width="1500" height="900" rx="42" fill="#f8fafc"/>
+  <text x="750" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="700" fill="#0f172a">Nexus — digital cosplay persona</text>
+  <text x="750" y="108" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#475569">Face-neutral · body-neutral · constructive tools · no real-world insignia</text>
+
+  <g transform="translate(250 385)" color="#f4b942" filter="url(#shadow)">
+    <rect x="-205" y="-245" width="410" height="610" rx="34" fill="#fff7df" stroke="#f4b942" stroke-width="5"/>
+    <use href="#nexus-base"/>
+    <g transform="translate(132 88)">
+      <path d="M-52-32Q0-50 52-32V48Q0 30-52 48Z" fill="#fff" stroke="#b7791f" stroke-width="6"/>
+      <path d="M0-40V40" stroke="#b7791f" stroke-width="5"/>
+      <path d="M-38-12H-12M12-12H38M-38 7H-12M12 7H38" stroke="#d69e2e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-42 50C-66 84-64 114-92 135M0 43C0 92-18 110-8 142M42 50C67 83 64 112 93 134" fill="none" stroke="#f4b942" stroke-width="7" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="250" y="790" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#7c4a03">Source Weaver</text>
+  <text x="250" y="824" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#713f12">Build · document · invite inspection</text>
+
+  <g transform="translate(750 385)" color="#36c5f0" filter="url(#shadow)">
+    <rect x="-205" y="-245" width="410" height="610" rx="34" fill="#e6f9ff" stroke="#0891b2" stroke-width="5"/>
+    <use href="#nexus-base"/>
+    <g transform="translate(137 92)">
+      <path d="M0-73L65-37L65 37L0 73L-65 37L-65-37Z" fill="#cffafe" fill-opacity="0.72" stroke="#0891b2" stroke-width="7"/>
+      <path d="M0-73V73M-65-37L65 37M65-37L-65 37" stroke="#22d3ee" stroke-width="4"/>
+      <path d="M-34-17L-11 6L35-35M-34 28L-12 49L35 6" fill="none" stroke="#0e7490" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <text x="750" y="790" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#155e75">Mirror Keeper</text>
+  <text x="750" y="824" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#164e63">Verify · restore · hand onward</text>
+
+  <g transform="translate(1250 385)" color="#a78bfa" filter="url(#shadow)">
+    <rect x="-205" y="-245" width="410" height="610" rx="34" fill="#f4efff" stroke="#8b5cf6" stroke-width="5"/>
+    <use href="#nexus-base"/>
+    <g transform="translate(135 88)" fill="#8b5cf6" stroke="#6d28d9" stroke-width="4">
+      <path d="M-70 84C-30 35-58-18-12-46C30-72 26-5 70-56" fill="none" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="-70" cy="84" r="11"/>
+      <circle cx="-45" cy="28" r="11"/>
+      <circle cx="-12" cy="-46" r="11"/>
+      <circle cx="25" cy="-9" r="11"/>
+      <circle cx="70" cy="-56" r="11"/>
+      <path d="M-48 114L-18 82L17 109L57 73" fill="none" stroke="#c4b5fd" stroke-width="7" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="1250" y="790" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#5b21b6">Ecosystem Wayfinder</text>
+  <text x="1250" y="824" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#4c1d95">Map · introduce · connect with consent</text>
+
+  <g transform="translate(750 870)">
+    <circle cx="-34" cy="0" r="10" fill="#f4b942"/>
+    <circle cx="0" cy="0" r="10" fill="#36c5f0"/>
+    <circle cx="34" cy="0" r="10" fill="#a78bfa"/>
+    <path d="M-24 0H-10M10 0H24" stroke="#475569" stroke-width="4"/>
+  </g>
+</svg>

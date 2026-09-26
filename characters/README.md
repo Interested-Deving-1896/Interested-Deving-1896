@@ -41,6 +41,7 @@ remaining recognizable:
 
 ## Continue reading
 
+- [Character artwork and accessibility descriptions](assets/README.md)
 - [Relay character study](mascot/CHARACTER-STUDY.md)
 - [Relay visual guide](mascot/VISUAL-GUIDE.md)
 - [Nexus character study](cosplay/NEXUS.md)
