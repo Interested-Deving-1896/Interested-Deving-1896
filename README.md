@@ -89,6 +89,7 @@ The Mirrorchain has two fictional creative representatives:
   open-source worldbuilding.
 
 [Meet the characters](characters/README.md) ·
+[View the reference artwork](characters/assets/README.md) ·
 [Explore the Mirrorchain lore](characters/lore/MIRRORCHAIN.md) ·
 [Read the creative provenance](characters/PROVENANCE.md)
 

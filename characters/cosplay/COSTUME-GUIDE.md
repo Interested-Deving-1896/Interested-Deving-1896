@@ -3,6 +3,8 @@
 Nexus has one base silhouette and three costumes. Each costume communicates a
 Mirrorchain role without implying hierarchy or authority over contributors.
 
+[View the first Nexus costume reference sheet](../assets/nexus/nexus-costumes.svg).
+
 ## Shared base
 
 - Face-neutral luminous visor with no facial likeness

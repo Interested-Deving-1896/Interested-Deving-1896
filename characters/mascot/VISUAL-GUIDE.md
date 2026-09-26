@@ -3,6 +3,8 @@
 This guide keeps Relay recognizable while leaving room for different artists
 and accessible presentations.
 
+[View the first Relay reference sheet](../assets/relay/relay-reference.svg).
+
 ## Required visual anchors
 
 1. A small, non-human, prismatic creature made from rounded panels.

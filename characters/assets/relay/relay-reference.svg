@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Relay mascot reference sheet</title>
+  <desc id="desc">Three views of the Relay mascot: amber Source spark with a notebook, cyan OSP Continuity prism, and violet OOC Connection constellation.</desc>
+  <defs>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#334155"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <g id="relay-base">
+      <path d="M-72-50L-112-86V-12L-76 5" fill="#1e293b" stroke="#e5e7eb" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M72-50L112-86V-12L76 5" fill="#1e293b" stroke="#e5e7eb" stroke-width="8" stroke-linejoin="round"/>
+      <ellipse cx="0" cy="90" rx="104" ry="72" fill="url(#panel)" stroke="#e5e7eb" stroke-width="8"/>
+      <rect x="-78" y="-64" width="156" height="132" rx="56" fill="url(#panel)" stroke="#e5e7eb" stroke-width="8"/>
+      <path d="M-62 10Q0 38 62 10" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="-31" cy="-8" rx="13" ry="18" fill="currentColor"/>
+      <ellipse cx="31" cy="-8" rx="13" ry="18" fill="currentColor"/>
+      <path d="M-15 31Q0 42 15 31" fill="none" stroke="#f8fafc" stroke-width="6" stroke-linecap="round"/>
+      <path d="M-82 79L-48 96M82 79L48 96" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+      <rect x="-73" y="143" width="42" height="52" rx="18" fill="#1e293b" stroke="#e5e7eb" stroke-width="7"/>
+      <rect x="31" y="143" width="42" height="52" rx="18" fill="#1e293b" stroke="#e5e7eb" stroke-width="7"/>
+      <path d="M95 72C140 38 166 20 190 38M95 92C140 116 168 112 190 38" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+      <path d="M-44 110Q0 128 44 110" fill="none" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="-28" cy="86" r="10" fill="#f4b942" stroke="#f8fafc" stroke-width="3"/>
+      <circle cx="0" cy="86" r="10" fill="#36c5f0" stroke="#f8fafc" stroke-width="3"/>
+      <circle cx="28" cy="86" r="10" fill="#a78bfa" stroke="#f8fafc" stroke-width="3"/>
+      <path d="M-28 86H28" stroke="#f8fafc" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="800" rx="40" fill="#f8fafc"/>
+  <text x="600" y="70" text-anchor="middle" font-family="system-ui, sans-serif" font-size="38" font-weight="700" fill="#0f172a">Relay — Mirrorchain mascot</text>
+  <text x="600" y="108" text-anchor="middle" font-family="system-ui, sans-serif" font-size="19" fill="#475569">One character · three contextual expressions · visible provenance</text>
+
+  <g transform="translate(200 350)" color="#f4b942" filter="url(#soft-shadow)">
+    <rect x="-170" y="-190" width="340" height="440" rx="30" fill="#fff7df" stroke="#f4b942" stroke-width="5"/>
+    <use href="#relay-base"/>
+    <g transform="translate(-122 105)">
+      <path d="M-34-18Q0-30 34-18V42Q0 30-34 42Z" fill="#fff" stroke="#b7791f" stroke-width="5"/>
+      <path d="M0-24V34" stroke="#b7791f" stroke-width="4"/>
+      <path d="M-24-5H-7M7-5H24M-24 10H-7M7 10H24" stroke="#d69e2e" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="200" y="635" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" font-weight="700" fill="#7c4a03">Source spark</text>
+  <text x="200" y="667" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#713f12">Origin · experiments · documentation</text>
+
+  <g transform="translate(600 350)" color="#36c5f0" filter="url(#soft-shadow)">
+    <rect x="-170" y="-190" width="340" height="440" rx="30" fill="#e6f9ff" stroke="#0891b2" stroke-width="5"/>
+    <use href="#relay-base"/>
+    <g transform="translate(-122 108)">
+      <path d="M0-42L40-20L40 25L0 47L-40 25L-40-20Z" fill="#cffafe" fill-opacity="0.75" stroke="#0891b2" stroke-width="6"/>
+      <path d="M0-42V47M-40-20L40 25M40-20L-40 25" stroke="#22d3ee" stroke-width="3"/>
+    </g>
+  </g>
+  <text x="600" y="635" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" font-weight="700" fill="#155e75">Continuity prism</text>
+  <text x="600" y="667" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#164e63">Integrity · recovery · verification</text>
+
+  <g transform="translate(1000 350)" color="#a78bfa" filter="url(#soft-shadow)">
+    <rect x="-170" y="-190" width="340" height="440" rx="30" fill="#f4efff" stroke="#8b5cf6" stroke-width="5"/>
+    <use href="#relay-base"/>
+    <g transform="translate(-125 110)" fill="#8b5cf6" stroke="#6d28d9" stroke-width="3">
+      <path d="M-36 28L-10-22L21 12L42-32" fill="none" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="-36" cy="28" r="8"/>
+      <circle cx="-10" cy="-22" r="8"/>
+      <circle cx="21" cy="12" r="8"/>
+      <circle cx="42" cy="-32" r="8"/>
+    </g>
+  </g>
+  <text x="1000" y="635" text-anchor="middle" font-family="system-ui, sans-serif" font-size="27" font-weight="700" fill="#5b21b6">Connection constellation</text>
+  <text x="1000" y="667" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" fill="#4c1d95">Discovery · integration · community</text>
+
+  <g transform="translate(600 735)">
+    <circle cx="-34" cy="0" r="10" fill="#f4b942"/>
+    <circle cx="0" cy="0" r="10" fill="#36c5f0"/>
+    <circle cx="34" cy="0" r="10" fill="#a78bfa"/>
+    <path d="M-24 0H-10M10 0H24" stroke="#475569" stroke-width="4"/>
+  </g>
+</svg>
