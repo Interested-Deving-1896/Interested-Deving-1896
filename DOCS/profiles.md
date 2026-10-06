@@ -2,11 +2,11 @@
 
 Organization README content is maintained in two canonical templates:
 
-- [`profiles/osp/README.md`](../profiles/osp/README.md)
-- [`profiles/ooc/README.md`](../profiles/ooc/README.md)
+- [`profiles/osp/README.md`](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/profiles/osp/README.md)
+- [`profiles/ooc/README.md`](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/profiles/ooc/README.md)
 
 The destination allowlist is stored in
-[`config/profile-targets.json`](../config/profile-targets.json). Changes to a
+[`config/profile-targets.json`](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/config/profile-targets.json). Changes to a
 template and repository-specific policy are validated. The template can then be
 published to its organization-named repository and special
 `.github/profile/README.md` destination; the policy is published only to the

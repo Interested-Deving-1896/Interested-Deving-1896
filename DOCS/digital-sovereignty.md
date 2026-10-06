@@ -14,5 +14,5 @@ For this repository, that means:
 - ensuring that no single downstream copy silently becomes the authority.
 
 Read [KDE's digital-sovereignty guidance](https://kde.org/for/digital-sovereignty/)
-and the project's [creative provenance](../characters/PROVENANCE.md) for the
+and the project's [creative provenance](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/PROVENANCE.md) for the
 engineering and fictional contexts respectively.

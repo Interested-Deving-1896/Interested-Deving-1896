@@ -8,6 +8,7 @@ on:
       - 'characters/**'
       - '.gitbook.yaml'
       - 'book.toml'
+      - 'scripts/check_rendered_links.py'
       - '.github/workflows/docs.yml'
   push:
     branches: [main]
@@ -17,6 +18,7 @@ on:
       - 'characters/**'
       - '.gitbook.yaml'
       - 'book.toml'
+      - 'scripts/check_rendered_links.py'
       - '.github/workflows/docs.yml'
   workflow_dispatch:
 
@@ -65,6 +67,11 @@ jobs:
 
       - name: Build documentation
         run: mdbook build
+
+      - name: Validate rendered documentation links
+        run: >-
+          python3 scripts/check_rendered_links.py book
+          --site-prefix /OpenOS-Project-Ecosystem-OOC/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5

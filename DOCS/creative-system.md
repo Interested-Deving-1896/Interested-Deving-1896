@@ -12,7 +12,7 @@ The organization templates contain only the expression appropriate to that
 organization: OSP uses the Continuity Prism and Mirror Keeper; OOC uses the
 Connection Constellation and Ecosystem Wayfinder.
 
-Continue with the [character index](../characters/README.md),
-[Mirrorchain folklore](../characters/lore/MIRRORCHAIN.md),
-[Stewardship Ledger tier folklore](../characters/lore/STEWARDSHIP-LEDGER.md),
-and [creative provenance](../characters/PROVENANCE.md).
+Continue with the [character index](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/README.md),
+[Mirrorchain folklore](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/lore/MIRRORCHAIN.md),
+[Stewardship Ledger tier folklore](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/lore/STEWARDSHIP-LEDGER.md),
+and [creative provenance](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/PROVENANCE.md).

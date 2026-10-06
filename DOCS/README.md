@@ -10,7 +10,7 @@ versioned with the automation source.
 
 | Resource | Purpose |
 |---|---|
-| [Profile README](../README.md) | Workspace overview, current focus, principles, and entry points |
+| [Profile README](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/README.md) | Workspace overview, current focus, principles, and entry points |
 | [Profile-system architecture](architecture.md) | Personal and organization identity boundaries, publication targets, and documentation flow |
 | [Organization README publication](profiles.md) | Template validation, allowlisted destinations, credentials, and local commands |
 | [Digital sovereignty](digital-sovereignty.md) | Practical open-source principles informed by KDE's public guidance |
@@ -73,10 +73,10 @@ not affect the Pages build.
 
 | Resource | Purpose |
 |---|---|
-| [Character index](../characters/README.md) | Relay and Nexus roles, layer variants, and boundaries |
-| [Mirrorchain folklore](../characters/lore/MIRRORCHAIN.md) | Fictional translation of source, continuity, and ecosystem layers |
-| [Creative provenance](../characters/PROVENANCE.md) | Ideation history, KDE influence, digital sovereignty, and AI disclosure |
-| [Creative-work license](../characters/LICENSE.md) | CC BY-SA 4.0 terms for original work under `characters/` |
+| [Character index](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/README.md) | Relay and Nexus roles, layer variants, and boundaries |
+| [Mirrorchain folklore](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/lore/MIRRORCHAIN.md) | Fictional translation of source, continuity, and ecosystem layers |
+| [Creative provenance](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/PROVENANCE.md) | Ideation history, KDE influence, digital sovereignty, and AI disclosure |
+| [Creative-work license](https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main/characters/LICENSE.md) | CC BY-SA 4.0 terms for original work under `characters/` |
 
 ## Contribution direction
 

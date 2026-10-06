@@ -20,6 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "config" / "profile-targets.json"
 DEFAULT_SUPPORT_TIERS = ROOT / "config" / "support-tiers.json"
 DEFAULT_GENERATED_DOC = ROOT / "DOCS" / "generated" / "profile-targets.md"
+SOURCE_BLOB_URL = (
+    "https://github.com/Interested-Deving-1896/Interested-Deving-1896/blob/main"
+)
 LINK_PATTERN = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 SUPPORT_TIERS_START = "<!-- SUPPORT-TIERS:START -->"
 SUPPORT_TIERS_END = "<!-- SUPPORT-TIERS:END -->"
@@ -650,7 +653,7 @@ def generated_document(manifest: dict[str, Any]) -> str:
             path = destination["path"]
             lines.append(
                 f"| {profile['title']} | [`{profile['source']}`]"
-                f"(../../{profile['source']}) | "
+                f"({SOURCE_BLOB_URL}/{profile['source']}) | "
                 f"[`{repository}`](https://github.com/{repository}) | `{path}` |"
             )
     lines.extend(
@@ -673,7 +676,7 @@ def generated_document(manifest: dict[str, Any]) -> str:
         for destination in manifest["shared_automation"]["destinations"]:
             repository = destination["repository"]
             lines.append(
-                f"| [`{source}`](../../{source}) | "
+                f"| [`{source}`]({SOURCE_BLOB_URL}/{source}) | "
                 f"[`{repository}`](https://github.com/{repository}) |"
             )
     lines.extend(
@@ -692,7 +695,7 @@ def generated_document(manifest: dict[str, Any]) -> str:
         policy = profile["policy_destination"]
         lines.append(
             f"| {profile['title']} | [`{profile['policy_source']}`]"
-            f"(../../{profile['policy_source']}) | "
+            f"({SOURCE_BLOB_URL}/{profile['policy_source']}) | "
             f"[`{policy['repository']}:{policy['path']}`]"
             f"(https://github.com/{policy['repository']}/blob/{policy['branch']}/{policy['path']}) |"
         )
@@ -713,7 +716,7 @@ def generated_document(manifest: dict[str, Any]) -> str:
         lore = profile["lore_destination"]
         lines.append(
             f"| {profile['title']} | [`{profile['lore_source']}`]"
-            f"(../../{profile['lore_source']}) | "
+            f"({SOURCE_BLOB_URL}/{profile['lore_source']}) | "
             f"[`{lore['repository']}:{lore['path']}`]"
             f"(https://github.com/{lore['repository']}/blob/{lore['branch']}/{lore['path']}) |"
         )

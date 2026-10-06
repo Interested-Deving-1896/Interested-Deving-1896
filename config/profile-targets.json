@@ -128,6 +128,7 @@
       ".github/workflows/readme-quality.yml",
       ".github/workflows/repository-audit.yml",
       ".github/workflows/support-bundle.yml",
+      "scripts/check_rendered_links.py",
       "scripts/readme_ai.py",
       "scripts/readme_policy.py"
     ],

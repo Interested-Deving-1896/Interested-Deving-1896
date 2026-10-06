@@ -8,6 +8,7 @@ on:
       - 'config/profile-targets.json'
       - 'config/support-tiers.json'
       - 'scripts/profile_readmes.py'
+      - 'scripts/check_rendered_links.py'
       - 'scripts/readme_ai.py'
       - 'scripts/readme_policy.py'
       - '.github/labeler.yml'
