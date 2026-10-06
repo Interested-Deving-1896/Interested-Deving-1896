@@ -1,0 +1,45 @@
+name: Content server and client smoke test
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'DOCS/**'
+      - '.github/workflows/content-smoke-test.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'DOCS/**'
+      - '.github/workflows/content-smoke-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Start local content server and run client check
+        env:
+          EXPECTED_IDENTITY: ${{ github.repository_owner }}
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 >"$RUNNER_TEMP/content-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in {1..10}; do
+            if curl -fsS http://127.0.0.1:8765/README.md -o "$RUNNER_TEMP/README.md"; then
+              break
+            fi
+            sleep 1
+          done
+          test -s "$RUNNER_TEMP/README.md"
+          grep -Fq "$EXPECTED_IDENTITY" "$RUNNER_TEMP/README.md"

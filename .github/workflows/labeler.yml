@@ -1,0 +1,29 @@
+name: Pull request labeler
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure community labels exist
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          gh label create documentation --repo "$REPOSITORY" --color 0075ca --force
+          gh label create automation --repo "$REPOSITORY" --color 5319e7 --force
+          gh label create development-environment --repo "$REPOSITORY" --color 0e8a16 --force
+          gh label create configuration --repo "$REPOSITORY" --color fbca04 --force
+
+      - name: Apply path labels
+        uses: actions/labeler@f27b608878404679385c85cfa523b85ccb86e213 # v6
+        with:
+          repo-token: ${{ github.token }}

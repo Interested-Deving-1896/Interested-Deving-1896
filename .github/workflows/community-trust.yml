@@ -1,0 +1,49 @@
+name: Community trust gate
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: community-trust-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  trust:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Evaluate contributor and changed paths
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ASSOCIATION: ${{ github.event.pull_request.author_association }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh api --paginate "repos/${REPOSITORY}/pulls/${PR_NUMBER}/files" \
+            --jq '.[].filename' > "$RUNNER_TEMP/changed-files.txt"
+
+          case "$ASSOCIATION" in
+            OWNER|MEMBER|COLLABORATOR)
+              echo "Trusted contributor association: $ASSOCIATION" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+              ;;
+          esac
+
+          if grep -Eq '^(\.github/|\.devcontainer/|\.ona/|config/|scripts/)' \
+              "$RUNNER_TEMP/changed-files.txt"; then
+            {
+              echo "## Maintainer review required"
+              echo
+              echo "This contributor is not yet repository-vouched and the pull request changes automation-sensitive paths."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          echo "Community contribution changes content-only paths; maintainer review remains available." \
+            >> "$GITHUB_STEP_SUMMARY"

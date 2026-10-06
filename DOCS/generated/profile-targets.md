@@ -14,3 +14,25 @@ README is not copied into either organization.
 Publication validates identity boundaries before making any update.
 Drift verification compares each remote file byte-for-byte with its
 canonical organization template.
+
+## Shared automation targets
+
+The following portable files are mirrored unchanged to both organization
+README repositories. They derive repository identity at runtime.
+
+| Canonical file | Destination repository |
+|---|---|
+| [`.github/labeler.yml`](../../.github/labeler.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/labeler.yml`](../../.github/labeler.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/ai-assistant.yml`](../../.github/workflows/ai-assistant.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/ai-assistant.yml`](../../.github/workflows/ai-assistant.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/community-trust.yml`](../../.github/workflows/community-trust.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/community-trust.yml`](../../.github/workflows/community-trust.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/content-smoke-test.yml`](../../.github/workflows/content-smoke-test.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/content-smoke-test.yml`](../../.github/workflows/content-smoke-test.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/labeler.yml`](../../.github/workflows/labeler.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/labeler.yml`](../../.github/workflows/labeler.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/repository-audit.yml`](../../.github/workflows/repository-audit.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/repository-audit.yml`](../../.github/workflows/repository-audit.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/support-bundle.yml`](../../.github/workflows/support-bundle.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/support-bundle.yml`](../../.github/workflows/support-bundle.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |

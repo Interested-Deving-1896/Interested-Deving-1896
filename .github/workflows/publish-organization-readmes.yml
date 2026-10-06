@@ -7,6 +7,13 @@ on:
       - 'profiles/**'
       - 'config/profile-targets.json'
       - 'scripts/profile_readmes.py'
+      - '.github/labeler.yml'
+      - '.github/workflows/ai-assistant.yml'
+      - '.github/workflows/community-trust.yml'
+      - '.github/workflows/content-smoke-test.yml'
+      - '.github/workflows/labeler.yml'
+      - '.github/workflows/repository-audit.yml'
+      - '.github/workflows/support-bundle.yml'
       - '.github/workflows/publish-organization-readmes.yml'
   workflow_dispatch:
     inputs:

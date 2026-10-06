@@ -10,6 +10,11 @@ The destination allowlist is stored in
 template are validated and can then be published to its organization-named
 repository and special `.github/profile/README.md` destination.
 
+The same manifest separately allowlists portable repository automation. Those
+files are mirrored unchanged to the two organization-named README repositories
+and derive their active identity from `github.repository_owner`; organization
+profile repositories continue to receive only `profile/README.md`.
+
 ## Workflows
 
 | Workflow | Responsibility |
@@ -18,6 +23,21 @@ repository and special `.github/profile/README.md` destination.
 | `Publish organization READMEs` | Update only the four allowlisted destination files |
 | `Verify organization README drift` | Compare all remote files byte-for-byte with their canonical templates |
 | `Build and deploy documentation` | Build the shared `DOCS/` source and deploy it to GitHub Pages |
+
+## Shared repository automation
+
+The organization-named README repositories receive these portable workflows:
+
+- guarded, collaborator-invoked AI assistance;
+- read-only repository and workflow auditing;
+- manual sanitized support-bundle generation;
+- a local content server/client smoke test;
+- a contributor-association trust gate for automation-sensitive changes; and
+- path-based pull-request labeling.
+
+Fork-Sync-All control-plane jobs that mutate other repositories, operate the
+FSA API, deliver diagnostics externally, or require the full cross-forge vouch
+registry are intentionally excluded.
 
 ## Credential boundary
 

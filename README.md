@@ -6,6 +6,7 @@
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://interested-deving-1896.github.io/Interested-Deving-1896/)
 [![Validate profile READMEs](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml)
 [![Build documentation](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml)
+[![Repository audit](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml)
 [![KDE Digital Sovereignty](https://img.shields.io/badge/KDE-digital%20sovereignty-1d99f3?logo=kde&logoColor=white&style=flat-square)](https://kde.org/for/digital-sovereignty/)
 [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)
 [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)

@@ -1,0 +1,25 @@
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+
+automation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/**'
+          - '.github/labeler.yml'
+
+development-environment:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.devcontainer/**'
+          - '.ona/**'
+
+configuration:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'config/**'
+          - '**/*.json'
+          - '**/*.toml'
+          - '**/*.yaml'
+          - '**/*.yml'

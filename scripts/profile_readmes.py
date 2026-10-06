@@ -54,6 +54,29 @@ def read_manifest(path: Path) -> dict[str, Any]:
                     raise ProfileError(
                         f"profiles.{key}.destinations.{field} is required"
                     )
+
+    shared = data.get("shared_automation")
+    if not isinstance(shared, dict):
+        raise ProfileError("profile manifest requires shared_automation")
+    sources = shared.get("sources")
+    destinations = shared.get("destinations")
+    if not isinstance(sources, list) or not sources:
+        raise ProfileError("shared_automation.sources must be a non-empty list")
+    if not isinstance(destinations, list) or not destinations:
+        raise ProfileError("shared_automation.destinations must be a non-empty list")
+    for source in sources:
+        if not isinstance(source, str) or not source.startswith(".github/"):
+            raise ProfileError(
+                "shared automation sources must be paths below .github/"
+            )
+    for destination in destinations:
+        if not isinstance(destination, dict):
+            raise ProfileError("shared_automation.destinations contains a non-object")
+        for field in ("repository", "branch"):
+            if not destination.get(field):
+                raise ProfileError(
+                    f"shared_automation.destinations.{field} is required"
+                )
     return data
 
 
@@ -142,6 +165,24 @@ def validate(manifest: dict[str, Any]) -> None:
                 f"profile destination, found {len(destinations)}"
             )
 
+    portable_identities = {"Interested-Deving-1896"}
+    portable_identities.update(
+        profile["required_identity"] for profile in manifest["profiles"].values()
+    )
+    for relative_source in manifest["shared_automation"]["sources"]:
+        source = repository_path(relative_source)
+        try:
+            content = source.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"{relative_source}: cannot read shared automation: {exc}")
+            continue
+        for identity in portable_identities:
+            if identity.casefold() in content.casefold():
+                errors.append(
+                    f"{relative_source}: shared automation hard-codes identity "
+                    f"{identity!r}"
+                )
+
     seen: set[Path] = set()
     for path in markdown_files:
         if path in seen:
@@ -183,8 +224,23 @@ def generated_document(manifest: dict[str, Any]) -> str:
             "Drift verification compares each remote file byte-for-byte with its",
             "canonical organization template.",
             "",
+            "## Shared automation targets",
+            "",
+            "The following portable files are mirrored unchanged to both organization",
+            "README repositories. They derive repository identity at runtime.",
+            "",
+            "| Canonical file | Destination repository |",
+            "|---|---|",
         ]
     )
+    for source in manifest["shared_automation"]["sources"]:
+        for destination in manifest["shared_automation"]["destinations"]:
+            repository = destination["repository"]
+            lines.append(
+                f"| [`{source}`](../../{source}) | "
+                f"[`{repository}`](https://github.com/{repository}) |"
+            )
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -206,6 +262,7 @@ def github_request(
     url: str,
     token: str,
     payload: dict[str, Any] | None = None,
+    allow_not_found: bool = False,
 ) -> dict[str, Any]:
     data = json.dumps(payload).encode() if payload is not None else None
     request = urllib.request.Request(
@@ -223,6 +280,8 @@ def github_request(
         with urllib.request.urlopen(request, timeout=30) as response:
             return json.loads(response.read().decode())
     except urllib.error.HTTPError as exc:
+        if allow_not_found and exc.code == 404:
+            return {}
         detail = exc.read().decode(errors="replace")
         raise ProfileError(f"GitHub API {method} {url} failed: {exc.code} {detail}") from exc
     except urllib.error.URLError as exc:
@@ -231,14 +290,16 @@ def github_request(
 
 def remote_file(
     repository: str, path: str, branch: str, token: str
-) -> tuple[str, str]:
+) -> tuple[str, str | None]:
     encoded_path = urllib.parse.quote(path, safe="/")
     encoded_ref = urllib.parse.quote(branch, safe="")
     url = (
         f"https://api.github.com/repos/{repository}/contents/{encoded_path}"
         f"?ref={encoded_ref}"
     )
-    data = github_request("GET", url, token)
+    data = github_request("GET", url, token, allow_not_found=True)
+    if not data:
+        return "", None
     if data.get("type") != "file" or not data.get("sha"):
         raise ProfileError(f"remote target is not a file: {repository}:{path}")
     content = base64.b64decode(data.get("content", "")).decode("utf-8")
@@ -279,14 +340,46 @@ def sync_profiles(
                 {
                     "message": "docs: synchronize organization profile",
                     "content": base64.b64encode(expected.encode()).decode(),
-                    "sha": sha,
                     "branch": branch,
+                    **({"sha": sha} if sha else {}),
+                },
+            )
+            print(f"UPDATED {label}")
+
+    for relative_source in manifest["shared_automation"]["sources"]:
+        source = repository_path(relative_source)
+        expected = source.read_text(encoding="utf-8")
+        for destination in manifest["shared_automation"]["destinations"]:
+            repository = destination["repository"]
+            branch = destination["branch"]
+            actual, sha = remote_file(repository, relative_source, branch, token)
+            label = f"{repository}:{relative_source}"
+            if actual == expected:
+                print(f"CURRENT {label}")
+                continue
+
+            drift += 1
+            print(f"DRIFT {label}")
+            if check or dry_run:
+                continue
+
+            encoded_path = urllib.parse.quote(relative_source, safe="/")
+            url = f"https://api.github.com/repos/{repository}/contents/{encoded_path}"
+            github_request(
+                "PUT",
+                url,
+                token,
+                {
+                    "message": "ci: synchronize shared repository automation",
+                    "content": base64.b64encode(expected.encode()).decode(),
+                    "branch": branch,
+                    **({"sha": sha} if sha else {}),
                 },
             )
             print(f"UPDATED {label}")
 
     if check and drift:
-        raise ProfileError(f"{drift} organization README target(s) have drifted")
+        raise ProfileError(f"{drift} downstream target(s) have drifted")
     if dry_run:
         print(f"Dry run complete: {drift} target(s) would be updated.")
     elif not check:

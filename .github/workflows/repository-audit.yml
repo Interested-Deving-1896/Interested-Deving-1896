@@ -1,0 +1,60 @@
+name: Repository audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ACTIONLINT_VERSION: '1.7.12'
+  ACTIONLINT_SHA256: '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Validate repository identity and Markdown
+        env:
+          EXPECTED_IDENTITY: ${{ github.repository_owner }}
+        run: |
+          test -f README.md
+          test "$(grep -c '^# ' README.md)" -eq 1
+          grep -Fq "$EXPECTED_IDENTITY" README.md
+          git diff --check
+          if [[ -f scripts/profile_readmes.py ]]; then
+            python3 scripts/profile_readmes.py validate
+            python3 scripts/profile_readmes.py generate-docs --check
+          fi
+
+      - name: Validate development-environment configuration
+        run: |
+          if [[ -f .devcontainer/devcontainer.json ]]; then
+            python3 -m json.tool .devcontainer/devcontainer.json >/dev/null
+          fi
+          if [[ -f .ona/config.yaml ]]; then
+            ruby -e 'require "yaml"; YAML.safe_load_file(".ona/config.yaml", aliases: true)'
+          fi
+
+      - name: Install actionlint
+        run: |
+          archive="actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          curl -fsSLO "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/${archive}"
+          echo "${ACTIONLINT_SHA256}  ${archive}" | sha256sum -c -
+          tar -xzf "$archive" actionlint
+
+      - name: Audit GitHub Actions
+        run: find .github/workflows -type f \( -name '*.yml' -o -name '*.yaml' \) -print0 | xargs -0 ./actionlint

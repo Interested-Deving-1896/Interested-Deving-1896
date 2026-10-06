@@ -43,5 +43,26 @@
         }
       ]
     }
+  },
+  "shared_automation": {
+    "sources": [
+      ".github/labeler.yml",
+      ".github/workflows/ai-assistant.yml",
+      ".github/workflows/community-trust.yml",
+      ".github/workflows/content-smoke-test.yml",
+      ".github/workflows/labeler.yml",
+      ".github/workflows/repository-audit.yml",
+      ".github/workflows/support-bundle.yml"
+    ],
+    "destinations": [
+      {
+        "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
+        "branch": "main"
+      },
+      {
+        "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
+        "branch": "main"
+      }
+    ]
   }
 }
