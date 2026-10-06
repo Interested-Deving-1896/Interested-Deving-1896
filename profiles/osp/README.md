@@ -8,6 +8,8 @@
 
 **Operational continuity for open systems.**
 
+**Preserve · Verify · Recover.**
+
 OpenOS-Project-OSP is the operational repository layer of the OpenOS Project.
 It keeps inspectable, independently verifiable copies of open-source systems
 work and supports continuity across GitHub and GitLab.

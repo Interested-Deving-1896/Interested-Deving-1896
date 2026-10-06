@@ -8,6 +8,8 @@
 
 **Connecting the wider OpenOS ecosystem.**
 
+**Connect · Discover · Interoperate.**
+
 OpenOS-Project-Ecosystem-OOC is the outward ecosystem layer of the OpenOS
 Project. It supports discovery, integration, and continuity across related
 open-source projects while keeping repository roles and provenance visible.
