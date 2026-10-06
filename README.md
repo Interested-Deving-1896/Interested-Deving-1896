@@ -9,6 +9,7 @@
 [![Build documentation](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml)
 [![Repository audit](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml)
 [![README quality](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml)
+[![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
 [![KDE Digital Sovereignty](https://img.shields.io/badge/KDE-digital%20sovereignty-1d99f3?logo=kde&logoColor=white&style=flat-square)](https://kde.org/for/digital-sovereignty/)
 [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)
 [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)
@@ -150,6 +151,52 @@ or hidden influence.
 > The Gemini conversation is an AI-generated ideation record, not a factual
 > description of KDE, Interested-Deving-1896, OSP, OOC, or any person or
 > organization.
+
+## OpenCollective support-tier template
+
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
+provides a transparent contribution layer alongside the technical source,
+operational-continuity, and ecosystem layers. Its
+[current contribution options](https://opencollective.com/openos-project/contribute)
+span infrastructure, research and development, releases, UI/UX, application
+repositories, contributor hardware and support, sustainability, community
+facilities, and shared logistics.
+
+The later tier inquiry from the Gemini discussion is applied here in its
+constructive form: a transparent funding taxonomy with explicit scope,
+accountability, and boundaries, kept separate from the fictional narrative.
+
+Here, a **tier** is a designated contribution purpose—not a rank, entitlement,
+governance role, security clearance, or level of access. New and revised tiers
+should use this reusable description template:
+
+| Field | Required description |
+|---|---|
+| Scope | OSP, OOC, or shared cross-namespace work |
+| Objective | The concrete outcome the tier is intended to support |
+| Eligible costs | The infrastructure, labor, hardware, services, or materials covered |
+| Allocation | How contributions are assigned when more than one layer benefits |
+| Cadence | One-time, recurring, milestone-based, or continuing support |
+| Evidence | Public updates, milestones, receipts, or other appropriate accountability |
+| Dependencies | Funding thresholds, partners, approvals, or delivery constraints |
+| Status | Proposed, active, paused, fulfilled, or retired |
+
+For README navigation, the live tiers can be summarized without duplicating
+their changeable prices or terms:
+
+| Tier family | Examples of supported work |
+|---|---|
+| Operations | Hosting, self-hosted services, continuity, and maintenance |
+| Engineering | R&D, releases, UI/UX, applications, and supporting technologies |
+| Ecosystem | Distributions, integrations, shared projects, and sustainability |
+| Contributor enablement | User support, development hardware, and contracted work |
+| Community infrastructure | Community spaces, essential services, and mobility initiatives |
+| Logistics | Distribution, shipping, and costs shared across tier families |
+
+The OpenCollective page remains the source of truth for availability, wording,
+amounts, fulfillment, and financial terms. A contribution expresses support for
+the stated purpose; it does not purchase governance authority or guarantee that
+a proposal, service, or benefit will be delivered.
 
 ## Mascot and digital cosplay 📖
 

@@ -4,6 +4,7 @@
 [![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--Ecosystem--OOC-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-Ecosystem-OOC)
 [![GitLab ecosystem](https://img.shields.io/badge/GitLab-openos--project--ooc--ecosystem-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project-ooc-ecosystem)
 [![README quality](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml)
+[![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
 <!-- README-AUTO:end:badges -->
 
 **Connecting the wider OpenOS ecosystem.**
@@ -72,6 +73,28 @@ hosted project.
 - Preserve upstream attribution and licensing.
 - Prefer federation, interoperability, and open standards over lock-in.
 - Treat accessibility, documentation, continuity, and discovery as core work.
+
+## OpenCollective support-tier template
+
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
+connects financial contributions to named purposes. For OOC, the
+[current tiers](https://opencollective.com/openos-project/contribute) map to
+ecosystem responsibilities as follows:
+
+| Tier family | OOC responsibility |
+|---|---|
+| Ecosystem engineering | Distributions, applications, UI/UX, integrations, and shared R&D |
+| Discovery and federation | Cross-project initiatives and One-Open-Collective relationships |
+| Contributor and user access | Project support, development hardware, and participation tools |
+| Sustainability | Environmental, social, and long-term ecosystem support proposals |
+| Shared operations | Infrastructure, maintenance, distribution, and logistics shared with OSP |
+
+Each tier description should declare its scope, objective, eligible costs,
+allocation, cadence, public evidence, dependencies, and status. A tier is a
+contribution purpose—not a rank, entitlement, governance role, security
+clearance, or access level. The live OpenCollective listing remains authoritative
+for availability, wording, amounts, fulfillment, and financial terms; support
+does not guarantee delivery of a proposal, service, or benefit.
 
 ## Creative identity
 

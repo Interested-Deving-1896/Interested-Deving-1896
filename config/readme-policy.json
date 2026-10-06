@@ -14,6 +14,7 @@
     "Fork-Sync-All mirror chain 🪞",
     "Working principles",
     "Digital sovereignty with KDE",
+    "OpenCollective support-tier template",
     "Mascot and digital cosplay 📖",
     "Connect"
   ],
@@ -23,6 +24,7 @@
     "actions/workflows/docs.yml/badge.svg",
     "actions/workflows/repository-audit.yml/badge.svg",
     "actions/workflows/readme-quality.yml/badge.svg",
+    "OpenCollective-support%20tiers",
     "kde.org/for/digital-sovereignty/"
   ],
   "managed_blocks": {
@@ -33,6 +35,7 @@
       "[![Build documentation](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml)",
       "[![Repository audit](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml)",
       "[![README quality](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml)",
+      "[![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)",
       "[![KDE Digital Sovereignty](https://img.shields.io/badge/KDE-digital%20sovereignty-1d99f3?logo=kde&logoColor=white&style=flat-square)](https://kde.org/for/digital-sovereignty/)",
       "[![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)",
       "[![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)"

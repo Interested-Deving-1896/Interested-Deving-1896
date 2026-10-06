@@ -4,6 +4,7 @@
 [![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--OSP-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-OSP)
 [![GitLab mirror](https://img.shields.io/badge/GitLab-openos--project-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project)
 [![README quality](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml)
+[![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
 <!-- README-AUTO:end:badges -->
 
 **Operational continuity for open systems.**
@@ -71,6 +72,28 @@ hosted project.
 - Keep synchronization direction and hosted-project roles explicit.
 - Treat accessibility, recovery, documentation, and operability as core work.
 - Avoid dependence on a single forge, vendor, runtime, or deployment target.
+
+## OpenCollective support-tier template
+
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
+connects financial contributions to named purposes. For OSP, the
+[current tiers](https://opencollective.com/openos-project/contribute) map to
+operational responsibilities as follows:
+
+| Tier family | OSP responsibility |
+|---|---|
+| Operations | Hosting, self-hosted services, continuity, and maintenance |
+| Engineering | Core R&D, releases, UI/UX, applications, and supporting technology |
+| Contributor enablement | Development hardware, project support, and contracted maintenance |
+| Community infrastructure | Operational planning for facilities and essential services |
+| Shared logistics | Distribution, shipping, and costs shared with OOC |
+
+Each tier description should declare its scope, objective, eligible costs,
+allocation, cadence, public evidence, dependencies, and status. A tier is a
+contribution purpose—not a rank, entitlement, governance role, security
+clearance, or access level. The live OpenCollective listing remains authoritative
+for availability, wording, amounts, fulfillment, and financial terms; support
+does not guarantee delivery of a proposal, service, or benefit.
 
 ## Creative identity
 
