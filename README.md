@@ -3,7 +3,9 @@
 # Interested-Deving-1896
 
 [![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/Interested-Deving-1896)
-[![Documentation](https://img.shields.io/badge/docs-ecosystem-00aacc?style=flat-square)](DOCS/README.md)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://interested-deving-1896.github.io/Interested-Deving-1896/)
+[![Validate profile READMEs](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml)
+[![Build documentation](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml)
 [![KDE Digital Sovereignty](https://img.shields.io/badge/KDE-digital%20sovereignty-1d99f3?logo=kde&logoColor=white&style=flat-square)](https://kde.org/for/digital-sovereignty/)
 [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)
 [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)
@@ -71,6 +73,7 @@ into a second, quickly stale operational manual.
 | Resource | What it covers |
 |---|---|
 | [Profile documentation map](DOCS/README.md) | Profile, mirror-chain, accessibility, creative, and downstream-profile references |
+| [Published profile documentation](https://interested-deving-1896.github.io/Interested-Deving-1896/) | GitBook-compatible profile, organization-publication, sovereignty, and creative-system pages built with mdBook |
 | [Full automation documentation](https://interested-deving-1896.github.io/fork-sync-all/) | Architecture, workflow reference, quota management, and runbooks |
 | [Mirror-chain architecture](https://interested-deving-1896.github.io/fork-sync-all/architecture.html) | Source, OSP, OOC, and GitLab data flow |
 | [Workflow triggers](https://interested-deving-1896.github.io/fork-sync-all/workflow-triggers.html) | Schedules, triggers, dependencies, and workflow groups |

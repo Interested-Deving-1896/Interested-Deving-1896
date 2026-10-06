@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "osp": {
+      "title": "OpenOS-Project-OSP",
+      "source": "profiles/osp/README.md",
+      "required_identity": "OpenOS-Project-OSP",
+      "forbidden_identity": [
+        "Interested-Deving-1896",
+        "Interested Deving"
+      ],
+      "destinations": [
+        {
+          "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
+          "path": "README.md",
+          "branch": "main"
+        },
+        {
+          "repository": "OpenOS-Project-OSP/.github",
+          "path": "profile/README.md",
+          "branch": "main"
+        }
+      ]
+    },
+    "ooc": {
+      "title": "OpenOS-Project-Ecosystem-OOC",
+      "source": "profiles/ooc/README.md",
+      "required_identity": "OpenOS-Project-Ecosystem-OOC",
+      "forbidden_identity": [
+        "Interested-Deving-1896",
+        "Interested Deving"
+      ],
+      "destinations": [
+        {
+          "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
+          "path": "README.md",
+          "branch": "main"
+        },
+        {
+          "repository": "OpenOS-Project-Ecosystem-OOC/.github",
+          "path": "profile/README.md",
+          "branch": "main"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+[book]
+title = "Interested-Deving-1896"
+description = "Profile, organization README publication, and Mirrorchain documentation"
+authors = ["Interested-Deving-1896 contributors"]
+language = "en"
+multilingual = false
+src = "DOCS"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+site-url = "/Interested-Deving-1896/"
+git-repository-url = "https://github.com/Interested-Deving-1896/Interested-Deving-1896"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/Interested-Deving-1896/Interested-Deving-1896/edit/main/{path}"
+no-section-label = false
+default-theme = "navy"
+preferred-dark-theme = "navy"
+
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3

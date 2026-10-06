@@ -11,6 +11,9 @@ versioned with the automation source.
 | Resource | Purpose |
 |---|---|
 | [Profile README](../README.md) | Workspace overview, current focus, principles, and entry points |
+| [Profile-system architecture](architecture.md) | Personal and organization identity boundaries, publication targets, and documentation flow |
+| [Organization README publication](profiles.md) | Template validation, allowlisted destinations, credentials, and local commands |
+| [Digital sovereignty](digital-sovereignty.md) | Practical open-source principles informed by KDE's public guidance |
 | [Automation documentation](https://interested-deving-1896.github.io/fork-sync-all/) | Published reference for the mirror and maintenance control plane |
 | [Architecture](https://interested-deving-1896.github.io/fork-sync-all/architecture.html) | Three-organization chain, GitLab leg, and data flow |
 | [Workflow reference](https://interested-deving-1896.github.io/fork-sync-all/workflow-triggers.html) | Workflow groups, triggers, schedules, and dependencies |
@@ -41,6 +44,20 @@ Generated references—including the source tree, glossary, registered imports,
 subgroup map, workflow reference, origins, and eco audit—are linked from the
 canonical index so their URLs and generated counts stay synchronized with the
 control-plane repository.
+
+## Documentation publishing
+
+The pages in this directory are the shared source for two independent outputs:
+
+- GitBook reads `.gitbook.yaml` and `DOCS/SUMMARY.md` through Git Sync.
+- GitHub Actions builds the same source with mdBook and deploys it through
+  GitHub Pages.
+
+Both outputs validate the organization-profile templates and generated target
+reference before building. GitHub Pages is published at
+<https://interested-deving-1896.github.io/Interested-Deving-1896/> after Pages
+is configured to use GitHub Actions. GitBook connection is optional and does
+not affect the Pages build.
 
 ## Repository roles
 

@@ -1,0 +1,62 @@
+name: Publish organization READMEs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'profiles/**'
+      - 'config/profile-targets.json'
+      - 'scripts/profile_readmes.py'
+      - '.github/workflows/publish-organization-readmes.yml'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report drift without updating destinations'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-organization-readmes
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Validate before publication
+        run: |
+          python3 scripts/profile_readmes.py validate
+          python3 scripts/profile_readmes.py generate-docs --check
+
+      - name: Check publication credential
+        id: credential
+        env:
+          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+        run: |
+          if [[ -n "$PROFILE_SYNC_TOKEN" ]]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::PROFILE_SYNC_TOKEN is not configured; publication skipped."
+          fi
+
+      - name: Publish allowlisted README files
+        if: steps.credential.outputs.available == 'true'
+        env:
+          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          if [[ "$DRY_RUN" == "true" ]]; then
+            python3 scripts/profile_readmes.py sync --dry-run
+          else
+            python3 scripts/profile_readmes.py sync
+            python3 scripts/profile_readmes.py sync --check
+          fi

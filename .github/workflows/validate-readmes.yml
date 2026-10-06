@@ -1,0 +1,48 @@
+name: Validate profile READMEs
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'DOCS/**'
+      - 'characters/**'
+      - 'profiles/**'
+      - 'config/profile-targets.json'
+      - 'scripts/profile_readmes.py'
+      - '.gitbook.yaml'
+      - 'book.toml'
+      - '.github/workflows/validate-readmes.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'DOCS/**'
+      - 'characters/**'
+      - 'profiles/**'
+      - 'config/profile-targets.json'
+      - 'scripts/profile_readmes.py'
+      - '.gitbook.yaml'
+      - 'book.toml'
+      - '.github/workflows/validate-readmes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-profile-readmes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Validate Markdown and profile identities
+        run: python3 scripts/profile_readmes.py validate
+
+      - name: Verify generated documentation
+        run: python3 scripts/profile_readmes.py generate-docs --check
