@@ -145,7 +145,7 @@ autonomy, transparent infrastructure, decentralization, and accountable
 stewardship—and rejects the discussion's speculative themes of covert control
 or hidden influence.
 
-[Read the stable Gemini discussion](https://gemini.google.com/share/fad002a39d3e) ·
+[Read the stable Gemini discussion](https://gemini.google.com/share/7eb1ddf414b2) ·
 [Read the creative provenance](characters/PROVENANCE.md)
 
 > The Gemini conversation is an AI-generated ideation record, not a factual
@@ -211,6 +211,7 @@ The Mirrorchain has two fictional creative representatives:
 
 [Meet the characters](characters/README.md) ·
 [Explore the Mirrorchain lore](characters/lore/MIRRORCHAIN.md) ·
+[Read the Stewardship Ledger](characters/lore/STEWARDSHIP-LEDGER.md) ·
 [Read the creative provenance](characters/PROVENANCE.md)
 
 > These characters and stories are fictional creative works. They are separate

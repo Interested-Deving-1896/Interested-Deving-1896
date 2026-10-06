@@ -7,8 +7,8 @@ It records influences openly while keeping the published canon original.
 ## Ideation record
 
 The initial discussion included the public Google Gemini conversation
-[The Ultimate Unified Persona Profile](https://gemini.google.com/share/fad002a39d3e),
-created on 25 September 2026 and most recently published on 5 October 2026.
+[The Ultimate Unified Persona Profile](https://gemini.google.com/share/7eb1ddf414b2),
+created on 25 September 2026 and most recently published on 6 October 2026.
 The canonical `gemini.google.com/share/` URL is used because the shorter
 `share.gemini.google` aliases can change when the conversation is republished.
 That conversation is an ideation record, not
@@ -26,6 +26,26 @@ Instead, it transforms broad themes into original open-source values:
 | Intelligence networks | Observability, documentation, and shared knowledge |
 | Defense | Resilience, recovery, and threat modelling |
 | Closed networks | Federated open-source communities |
+
+## OpenCollective tier addition
+
+The discussion was later extended with the
+[OpenOS Project OpenCollective](https://opencollective.com/openos-project) and
+used a four-part contribution-tier pattern for fictional worldbuilding. Its
+response described covert payments, extortion, unlawful markets, and hidden
+institutional influence. Those scenarios are neither factual claims nor
+Mirrorchain canon.
+
+The [Stewardship Ledger](lore/STEWARDSHIP-LEDGER.md) preserves only the useful
+narrative structure: small community support, recurring infrastructure support,
+larger milestone-bound stewardship, and custom public-benefit proposals. It
+reverses the original shadow-economy premise into transparent scope,
+accountability, consent, separation of funding from authority, and explicit
+stop conditions.
+
+Live OpenCollective tier names, prices, availability, legal status, and
+financial terms are not reproduced in the lore. The OpenCollective listing and
+applicable operational records remain authoritative.
 
 ## Digital-sovereignty addition
 

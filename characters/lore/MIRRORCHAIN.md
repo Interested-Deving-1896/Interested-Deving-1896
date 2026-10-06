@@ -48,5 +48,12 @@ visible.
 | Harbor | Operational mirror and recovery endpoint |
 | Constellation | Ecosystem discovery and integration |
 
+## The Stewardship Ledger
+
+Resources moving between the workshops are imagined through the
+[Stewardship Ledger](STEWARDSHIP-LEDGER.md), a fictional tier system built
+around visible purpose, bounded missions, public evidence, and separation of
+funding from authority.
+
 The folklore deliberately excludes covert organizations, warfare, criminal
 networks, real-world political bodies, and claims of hidden influence.

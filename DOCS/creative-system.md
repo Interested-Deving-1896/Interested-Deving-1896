@@ -13,5 +13,6 @@ organization: OSP uses the Continuity Prism and Mirror Keeper; OOC uses the
 Connection Constellation and Ecosystem Wayfinder.
 
 Continue with the [character index](../characters/README.md),
-[Mirrorchain folklore](../characters/lore/MIRRORCHAIN.md), and
-[creative provenance](../characters/PROVENANCE.md).
+[Mirrorchain folklore](../characters/lore/MIRRORCHAIN.md),
+[Stewardship Ledger tier folklore](../characters/lore/STEWARDSHIP-LEDGER.md),
+and [creative provenance](../characters/PROVENANCE.md).

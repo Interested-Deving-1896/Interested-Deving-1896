@@ -46,6 +46,7 @@ remaining recognizable:
 - [Nexus character study](cosplay/NEXUS.md)
 - [Nexus costume guide](cosplay/COSTUME-GUIDE.md)
 - [Mirrorchain lore](lore/MIRRORCHAIN.md)
+- [Stewardship Ledger tier folklore](lore/STEWARDSHIP-LEDGER.md)
 - [Creative provenance](PROVENANCE.md)
 - [Creative-work license](LICENSE.md)
 
