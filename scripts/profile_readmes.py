@@ -46,6 +46,8 @@ def read_manifest(path: Path) -> dict[str, Any]:
             "source",
             "policy_source",
             "policy_destination",
+            "lore_source",
+            "lore_destination",
             "required_identity",
             "destinations",
         ):
@@ -58,6 +60,14 @@ def read_manifest(path: Path) -> dict[str, Any]:
             if not policy_destination.get(field):
                 raise ProfileError(
                     f"profiles.{key}.policy_destination.{field} is required"
+                )
+        lore_destination = profile["lore_destination"]
+        if not isinstance(lore_destination, dict):
+            raise ProfileError(f"profiles.{key}.lore_destination must be an object")
+        for field in ("repository", "path", "branch"):
+            if not lore_destination.get(field):
+                raise ProfileError(
+                    f"profiles.{key}.lore_destination.{field} is required"
                 )
         if not isinstance(profile["destinations"], list):
             raise ProfileError(f"profiles.{key}.destinations must be a list")
@@ -157,7 +167,9 @@ def validate(manifest: dict[str, Any]) -> None:
     for key, profile in manifest["profiles"].items():
         source = repository_path(profile["source"])
         policy_source = repository_path(profile["policy_source"])
+        lore_source = repository_path(profile["lore_source"])
         markdown_files.append(source)
+        markdown_files.append(lore_source)
         try:
             content = source.read_text(encoding="utf-8")
         except OSError as exc:
@@ -193,6 +205,24 @@ def validate(manifest: dict[str, Any]) -> None:
                     f"{profile['policy_source']}: policy does not require "
                     f"{profile['required_identity']!r}"
                 )
+
+        try:
+            lore = lore_source.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"{profile['lore_source']}: cannot read lore: {exc}")
+        else:
+            if profile["required_identity"] not in lore:
+                errors.append(
+                    f"{profile['lore_source']}: missing required identity "
+                    f"{profile['required_identity']!r}"
+                )
+            lowered_lore = lore.casefold()
+            for forbidden in profile.get("forbidden_identity", []):
+                if forbidden.casefold() in lowered_lore:
+                    errors.append(
+                        f"{profile['lore_source']}: forbidden identity present: "
+                        f"{forbidden!r}"
+                    )
 
     portable_identities = {"Interested-Deving-1896"}
     portable_identities.update(
@@ -288,6 +318,27 @@ def generated_document(manifest: dict[str, Any]) -> str:
             f"(../../{profile['policy_source']}) | "
             f"[`{policy['repository']}:{policy['path']}`]"
             f"(https://github.com/{policy['repository']}/blob/{policy['branch']}/{policy['path']}) |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Organization-specific fictional lore",
+            "",
+            "Each named README repository receives a Stewardship Ledger variant",
+            "written only for that repository's identity. Detailed fiction remains",
+            "outside the operational organization profile README.",
+            "",
+            "| Organization | Canonical lore | Destination |",
+            "|---|---|---|",
+        ]
+    )
+    for profile in manifest["profiles"].values():
+        lore = profile["lore_destination"]
+        lines.append(
+            f"| {profile['title']} | [`{profile['lore_source']}`]"
+            f"(../../{profile['lore_source']}) | "
+            f"[`{lore['repository']}:{lore['path']}`]"
+            f"(https://github.com/{lore['repository']}/blob/{lore['branch']}/{lore['path']}) |"
         )
     lines.append("")
     return "\n".join(lines)
@@ -417,6 +468,35 @@ def sync_profiles(
                     token,
                     {
                         "message": "ci: synchronize repository README policy",
+                        "content": base64.b64encode(expected.encode()).decode(),
+                        "branch": branch,
+                        **({"sha": sha} if sha else {}),
+                    },
+                )
+                print(f"UPDATED {label}")
+
+        lore_source = repository_path(profile["lore_source"])
+        expected = lore_source.read_text(encoding="utf-8")
+        destination = profile["lore_destination"]
+        repository = destination["repository"]
+        path = destination["path"]
+        branch = destination["branch"]
+        actual, sha = remote_file(repository, path, branch, token)
+        label = f"{repository}:{path}"
+        if actual == expected:
+            print(f"CURRENT {label}")
+        else:
+            drift += 1
+            print(f"DRIFT {label}")
+            if not check and not dry_run:
+                encoded_path = urllib.parse.quote(path, safe="/")
+                url = f"https://api.github.com/repos/{repository}/contents/{encoded_path}"
+                github_request(
+                    "PUT",
+                    url,
+                    token,
+                    {
+                        "message": "docs: synchronize organization-specific lore",
                         "content": base64.b64encode(expected.encode()).decode(),
                         "branch": branch,
                         **({"sha": sha} if sha else {}),

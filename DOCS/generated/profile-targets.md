@@ -56,3 +56,14 @@ copied across organization boundaries.
 |---|---|---|
 | OpenOS-Project-OSP | [`profiles/osp/readme-policy.json`](../../profiles/osp/readme-policy.json) | [`OpenOS-Project-OSP/OpenOS-Project-OSP:config/readme-policy.json`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/blob/main/config/readme-policy.json) |
 | OpenOS-Project-Ecosystem-OOC | [`profiles/ooc/readme-policy.json`](../../profiles/ooc/readme-policy.json) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC:config/readme-policy.json`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/blob/main/config/readme-policy.json) |
+
+## Organization-specific fictional lore
+
+Each named README repository receives a Stewardship Ledger variant
+written only for that repository's identity. Detailed fiction remains
+outside the operational organization profile README.
+
+| Organization | Canonical lore | Destination |
+|---|---|---|
+| OpenOS-Project-OSP | [`profiles/osp/characters/lore/STEWARDSHIP-LEDGER.md`](../../profiles/osp/characters/lore/STEWARDSHIP-LEDGER.md) | [`OpenOS-Project-OSP/OpenOS-Project-OSP:characters/lore/STEWARDSHIP-LEDGER.md`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/blob/main/characters/lore/STEWARDSHIP-LEDGER.md) |
+| OpenOS-Project-Ecosystem-OOC | [`profiles/ooc/characters/lore/STEWARDSHIP-LEDGER.md`](../../profiles/ooc/characters/lore/STEWARDSHIP-LEDGER.md) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC:characters/lore/STEWARDSHIP-LEDGER.md`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/blob/main/characters/lore/STEWARDSHIP-LEDGER.md) |

@@ -47,6 +47,12 @@ The workflow engines under `scripts/` are mirrored unchanged. Each named README
 repository instead receives its own `config/readme-policy.json`, so OSP and OOC
 retain their own required identity, headings, badges, and managed content.
 
+Each named README repository also receives an organization-specific fictional
+Stewardship Ledger under `characters/lore/`. The OSP and OOC variants are
+independently written and identity-validated; neither is copied into the other
+organization. Their operational profile READMEs contain only a factual link to
+the corresponding lore file.
+
 Fork-Sync-All control-plane jobs that mutate other repositories, operate the
 FSA API, deliver diagnostics externally, or require the full cross-forge vouch
 registry are intentionally excluded.

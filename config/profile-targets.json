@@ -10,6 +10,12 @@
         "path": "config/readme-policy.json",
         "branch": "main"
       },
+      "lore_source": "profiles/osp/characters/lore/STEWARDSHIP-LEDGER.md",
+      "lore_destination": {
+        "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
+        "path": "characters/lore/STEWARDSHIP-LEDGER.md",
+        "branch": "main"
+      },
       "required_identity": "OpenOS-Project-OSP",
       "forbidden_identity": [
         "Interested-Deving-1896",
@@ -35,6 +41,12 @@
       "policy_destination": {
         "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
         "path": "config/readme-policy.json",
+        "branch": "main"
+      },
+      "lore_source": "profiles/ooc/characters/lore/STEWARDSHIP-LEDGER.md",
+      "lore_destination": {
+        "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
+        "path": "characters/lore/STEWARDSHIP-LEDGER.md",
         "branch": "main"
       },
       "required_identity": "OpenOS-Project-Ecosystem-OOC",

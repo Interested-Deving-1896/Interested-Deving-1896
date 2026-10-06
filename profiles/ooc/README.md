@@ -103,6 +103,8 @@ and Nexus's **Ecosystem Wayfinder** digital-cosplay costume. These are fictional
 creative works and do not assert real-world affiliations, operations, or
 identities.
 
+[Read the fictional OOC Constellation Ledger](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/blob/main/characters/lore/STEWARDSHIP-LEDGER.md).
+
 ## Connect
 
 - GitHub: [OpenOS-Project-Ecosystem-OOC](https://github.com/OpenOS-Project-Ecosystem-OOC)

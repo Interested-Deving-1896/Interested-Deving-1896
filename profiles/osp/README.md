@@ -101,6 +101,8 @@ The OSP layer is represented by Relay's **Continuity Prism** expression and
 Nexus's **Mirror Keeper** digital-cosplay costume. These are fictional creative
 works and do not assert real-world affiliations, operations, or identities.
 
+[Read the fictional OSP Continuity Ledger](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/blob/main/characters/lore/STEWARDSHIP-LEDGER.md).
+
 ## Connect
 
 - GitHub: [OpenOS-Project-OSP](https://github.com/OpenOS-Project-OSP)
