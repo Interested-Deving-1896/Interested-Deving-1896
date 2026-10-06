@@ -67,3 +67,13 @@ outside the operational organization profile README.
 |---|---|---|
 | OpenOS-Project-OSP | [`profiles/osp/characters/lore/STEWARDSHIP-LEDGER.md`](../../profiles/osp/characters/lore/STEWARDSHIP-LEDGER.md) | [`OpenOS-Project-OSP/OpenOS-Project-OSP:characters/lore/STEWARDSHIP-LEDGER.md`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/blob/main/characters/lore/STEWARDSHIP-LEDGER.md) |
 | OpenOS-Project-Ecosystem-OOC | [`profiles/ooc/characters/lore/STEWARDSHIP-LEDGER.md`](../../profiles/ooc/characters/lore/STEWARDSHIP-LEDGER.md) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC:characters/lore/STEWARDSHIP-LEDGER.md`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/blob/main/characters/lore/STEWARDSHIP-LEDGER.md) |
+
+## Organization-specific repository payloads
+
+Documentation sites, community-health files, and preview assets are
+published only to their matching named README repository.
+
+| Organization | Canonical roots | Explicit files | Destination |
+|---|---:|---:|---|
+| OpenOS-Project-OSP | `profiles/osp/site` | 12 | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| OpenOS-Project-Ecosystem-OOC | `profiles/ooc/site` | 12 | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |

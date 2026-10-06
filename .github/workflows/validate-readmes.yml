@@ -8,6 +8,7 @@ on:
       - 'characters/**'
       - 'profiles/**'
       - 'config/profile-targets.json'
+      - 'config/support-tiers.json'
       - 'scripts/profile_readmes.py'
       - '.gitbook.yaml'
       - 'book.toml'
@@ -20,6 +21,7 @@ on:
       - 'characters/**'
       - 'profiles/**'
       - 'config/profile-targets.json'
+      - 'config/support-tiers.json'
       - 'scripts/profile_readmes.py'
       - '.gitbook.yaml'
       - 'book.toml'
@@ -46,3 +48,6 @@ jobs:
 
       - name: Verify generated documentation
         run: python3 scripts/profile_readmes.py generate-docs --check
+
+      - name: Verify generated support-tier sections
+        run: python3 scripts/profile_readmes.py generate-tiers --check

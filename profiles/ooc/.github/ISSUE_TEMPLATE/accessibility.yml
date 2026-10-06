@@ -1,0 +1,36 @@
+name: Accessibility barrier
+description: Report difficulty using or understanding OOC profile or ecosystem content.
+title: "[Accessibility]: "
+labels:
+  - accessibility
+  - documentation
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Affected forge, page, or file
+    validations:
+      required: true
+  - type: textarea
+    id: barrier
+    attributes:
+      label: Barrier encountered
+      description: Do not include private medical information.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser or assistive technology
+      description: Optional; include versions only when useful.
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: Optional.

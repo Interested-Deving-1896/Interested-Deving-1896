@@ -1,0 +1,51 @@
+name: OSP profile or continuity issue
+description: Report incorrect, stale, missing, or confusing OSP profile content.
+title: "[OSP content]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve OpenOS-Project-OSP continuity guidance.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Profile identity or role
+        - Provenance or synchronization direction
+        - Cross-forge terminology
+        - Support or contribution guidance
+        - Funding-tier summary
+        - Fictional lore labeling
+        - Other documentation
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Repository/project, page, or file
+      description: Link to or identify the affected location and forge.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs to change?
+      description: Explain the current problem and the result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source and mirror context
+      description: Identify the authoritative source or sync direction when relevant.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched for an existing report.
+          required: true
+        - label: This report does not contain a vulnerability or private information.
+          required: true

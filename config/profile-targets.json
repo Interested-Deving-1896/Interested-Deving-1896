@@ -16,6 +16,30 @@
         "path": "characters/lore/STEWARDSHIP-LEDGER.md",
         "branch": "main"
       },
+      "repository_payload": {
+        "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
+        "branch": "main",
+        "roots": [
+          {
+            "source": "profiles/osp/site",
+            "path": ""
+          }
+        ],
+        "files": [
+          { "source": "profiles/osp/ACCESSIBILITY.md", "path": "ACCESSIBILITY.md" },
+          { "source": "profiles/osp/CODE_OF_CONDUCT.md", "path": "CODE_OF_CONDUCT.md" },
+          { "source": "profiles/osp/CONTRIBUTING.md", "path": "CONTRIBUTING.md" },
+          { "source": "profiles/osp/SECURITY.md", "path": "SECURITY.md" },
+          { "source": "profiles/osp/SUPPORT.md", "path": "SUPPORT.md" },
+          { "source": "profiles/osp/.github/FUNDING.yml", "path": ".github/FUNDING.yml" },
+          { "source": "profiles/osp/.github/PULL_REQUEST_TEMPLATE.md", "path": ".github/PULL_REQUEST_TEMPLATE.md" },
+          { "source": "profiles/osp/.github/ISSUE_TEMPLATE/accessibility.yml", "path": ".github/ISSUE_TEMPLATE/accessibility.yml" },
+          { "source": "profiles/osp/.github/ISSUE_TEMPLATE/config.yml", "path": ".github/ISSUE_TEMPLATE/config.yml" },
+          { "source": "profiles/osp/.github/ISSUE_TEMPLATE/content.yml", "path": ".github/ISSUE_TEMPLATE/content.yml" },
+          { "source": "profiles/osp/assets/social-preview.png", "path": "assets/social-preview.png" },
+          { "source": "profiles/osp/assets/social-preview.svg", "path": "assets/social-preview.svg" }
+        ]
+      },
       "required_identity": "OpenOS-Project-OSP",
       "forbidden_identity": [
         "Interested-Deving-1896",
@@ -48,6 +72,30 @@
         "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
         "path": "characters/lore/STEWARDSHIP-LEDGER.md",
         "branch": "main"
+      },
+      "repository_payload": {
+        "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
+        "branch": "main",
+        "roots": [
+          {
+            "source": "profiles/ooc/site",
+            "path": ""
+          }
+        ],
+        "files": [
+          { "source": "profiles/ooc/ACCESSIBILITY.md", "path": "ACCESSIBILITY.md" },
+          { "source": "profiles/ooc/CODE_OF_CONDUCT.md", "path": "CODE_OF_CONDUCT.md" },
+          { "source": "profiles/ooc/CONTRIBUTING.md", "path": "CONTRIBUTING.md" },
+          { "source": "profiles/ooc/SECURITY.md", "path": "SECURITY.md" },
+          { "source": "profiles/ooc/SUPPORT.md", "path": "SUPPORT.md" },
+          { "source": "profiles/ooc/.github/FUNDING.yml", "path": ".github/FUNDING.yml" },
+          { "source": "profiles/ooc/.github/PULL_REQUEST_TEMPLATE.md", "path": ".github/PULL_REQUEST_TEMPLATE.md" },
+          { "source": "profiles/ooc/.github/ISSUE_TEMPLATE/accessibility.yml", "path": ".github/ISSUE_TEMPLATE/accessibility.yml" },
+          { "source": "profiles/ooc/.github/ISSUE_TEMPLATE/config.yml", "path": ".github/ISSUE_TEMPLATE/config.yml" },
+          { "source": "profiles/ooc/.github/ISSUE_TEMPLATE/content.yml", "path": ".github/ISSUE_TEMPLATE/content.yml" },
+          { "source": "profiles/ooc/assets/social-preview.png", "path": "assets/social-preview.png" },
+          { "source": "profiles/ooc/assets/social-preview.svg", "path": "assets/social-preview.svg" }
+        ]
       },
       "required_identity": "OpenOS-Project-Ecosystem-OOC",
       "forbidden_identity": [
@@ -85,10 +133,12 @@
     ],
     "destinations": [
       {
+        "profile": "osp",
         "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
         "branch": "main"
       },
       {
+        "profile": "ooc",
         "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
         "branch": "main"
       }

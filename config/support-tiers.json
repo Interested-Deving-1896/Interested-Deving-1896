@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "source_of_truth": {
+    "name": "OpenOS Project OpenCollective",
+    "collective_url": "https://opencollective.com/openos-project",
+    "contribution_options_url": "https://opencollective.com/openos-project/contribute",
+    "authority": "The live OpenCollective listing is authoritative for availability, wording, amounts, fulfillment, and financial terms."
+  },
+  "content_boundaries": {
+    "classification": "factual-operational",
+    "fictional_lore_generated": false,
+    "fictional_lore_roots": [
+      "characters/lore/",
+      "profiles/osp/characters/lore/",
+      "profiles/ooc/characters/lore/"
+    ],
+    "rule": "Generated operational README content must not describe fictional tiers, characters, covert activity, or imaginary financial arrangements."
+  },
+  "required_tier_metadata": [
+    {
+      "key": "scope",
+      "label": "Scope",
+      "description": "The source, OSP, OOC, or shared cross-namespace work covered"
+    },
+    {
+      "key": "objective",
+      "label": "Objective",
+      "description": "The concrete public outcome the contribution purpose is intended to support"
+    },
+    {
+      "key": "eligible_costs",
+      "label": "Eligible costs",
+      "description": "The infrastructure, labor, hardware, services, or materials covered"
+    },
+    {
+      "key": "allocation",
+      "label": "Allocation",
+      "description": "How contributions are assigned when more than one layer benefits"
+    },
+    {
+      "key": "cadence",
+      "label": "Cadence",
+      "description": "One-time, recurring, milestone-based, or continuing support"
+    },
+    {
+      "key": "evidence",
+      "label": "Evidence",
+      "description": "Public updates, milestones, receipts, or other appropriate accountability"
+    },
+    {
+      "key": "dependencies",
+      "label": "Dependencies",
+      "description": "Funding thresholds, partners, approvals, or delivery constraints"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "description": "Proposed, active, paused, fulfilled, or retired"
+    }
+  ],
+  "profiles": {
+    "source": {
+      "identity": "Interested-Deving-1896",
+      "readme": "README.md",
+      "scope_statement": "This source-workspace view groups contribution purposes by the public work they support across the OpenOS Project mirror chain.",
+      "include_metadata_template": true,
+      "families": [
+        {
+          "key": "operations",
+          "label": "Operations",
+          "purpose": "Hosting, self-hosted services, continuity, and maintenance"
+        },
+        {
+          "key": "engineering",
+          "label": "Engineering",
+          "purpose": "R&D, releases, UI/UX, applications, and supporting technologies"
+        },
+        {
+          "key": "ecosystem",
+          "label": "Ecosystem",
+          "purpose": "Distributions, integrations, shared projects, and sustainability"
+        },
+        {
+          "key": "contributor_enablement",
+          "label": "Contributor enablement",
+          "purpose": "User support, development hardware, and contracted work"
+        },
+        {
+          "key": "community_infrastructure",
+          "label": "Community infrastructure",
+          "purpose": "Community spaces, essential services, and mobility initiatives"
+        },
+        {
+          "key": "logistics",
+          "label": "Logistics",
+          "purpose": "Distribution, shipping, and costs shared across tier families"
+        }
+      ]
+    },
+    "osp": {
+      "identity": "OpenOS-Project-OSP",
+      "readme": "profiles/osp/README.md",
+      "scope_statement": "This operational-continuity view maps contribution purposes to OSP responsibilities.",
+      "include_metadata_template": false,
+      "families": [
+        {
+          "key": "continuity_infrastructure",
+          "label": "Continuity infrastructure",
+          "purpose": "Mirrors, hosting, storage, recovery, deployment, and self-hosted services"
+        },
+        {
+          "key": "engineering_operations",
+          "label": "Engineering operations",
+          "purpose": "Automation, releases, supporting technologies, and maintenance"
+        },
+        {
+          "key": "contributor_operations",
+          "label": "Contributor operations",
+          "purpose": "User support, development hardware, and contracted work"
+        },
+        {
+          "key": "resilient_infrastructure",
+          "label": "Resilient infrastructure",
+          "purpose": "Environmental and long-term operational proposals"
+        },
+        {
+          "key": "shared_logistics",
+          "label": "Shared logistics",
+          "purpose": "Distribution, shipping, and cross-namespace operational costs"
+        }
+      ]
+    },
+    "ooc": {
+      "identity": "OpenOS-Project-Ecosystem-OOC",
+      "readme": "profiles/ooc/README.md",
+      "scope_statement": "This ecosystem view maps contribution purposes to OOC responsibilities.",
+      "include_metadata_template": false,
+      "families": [
+        {
+          "key": "ecosystem_engineering",
+          "label": "Ecosystem engineering",
+          "purpose": "Distributions, applications, UI/UX, integrations, and shared R&D"
+        },
+        {
+          "key": "discovery_federation",
+          "label": "Discovery and federation",
+          "purpose": "Cross-project initiatives and One-Open-Collective relationships"
+        },
+        {
+          "key": "contributor_user_access",
+          "label": "Contributor and user access",
+          "purpose": "Project support, development hardware, and participation tools"
+        },
+        {
+          "key": "sustainability",
+          "label": "Sustainability",
+          "purpose": "Environmental, social, and long-term ecosystem support proposals"
+        },
+        {
+          "key": "shared_operations",
+          "label": "Shared operations",
+          "purpose": "Infrastructure, maintenance, distribution, and logistics shared with OSP"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+[book]
+title = "OpenOS-Project-Ecosystem-OOC"
+description = "Ecosystem discovery, interoperability, and continuity documentation"
+authors = ["OpenOS-Project-Ecosystem-OOC contributors"]
+language = "en"
+multilingual = false
+src = "DOCS"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+site-url = "/OpenOS-Project-Ecosystem-OOC/"
+no-section-label = false
+default-theme = "navy"
+preferred-dark-theme = "navy"
+
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3

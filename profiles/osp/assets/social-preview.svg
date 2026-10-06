@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">OpenOS-Project-OSP social preview</title>
+  <desc id="desc">Operational continuity for open systems. Preserve, verify, recover.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062e2c"/><stop offset="1" stop-color="#087f5b"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="28" fill="url(#grid)"/>
+  <circle cx="1120" cy="120" r="220" fill="#63e6be" opacity=".14"/>
+  <circle cx="1190" cy="585" r="270" fill="#74c0fc" opacity=".10"/>
+  <text x="88" y="235" fill="#c3fae8" font-family="system-ui, sans-serif" font-size="30" font-weight="600" letter-spacing="4">OPERATIONAL CONTINUITY</text>
+  <text x="84" y="340" fill="#ffffff" font-family="system-ui, sans-serif" font-size="72" font-weight="750">OpenOS-Project-OSP</text>
+  <text x="88" y="432" fill="#b2f2bb" font-family="system-ui, sans-serif" font-size="38">Preserve · Verify · Recover</text>
+  <path d="M88 500H510" stroke="#63e6be" stroke-width="8" stroke-linecap="round"/>
+</svg>

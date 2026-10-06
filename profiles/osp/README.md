@@ -3,6 +3,7 @@
 <!-- README-AUTO:start:badges -->
 [![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--OSP-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-OSP)
 [![GitLab mirror](https://img.shields.io/badge/GitLab-openos--project-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://openos-project-osp.github.io/OpenOS-Project-OSP/)
 [![README quality](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml)
 [![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
 <!-- README-AUTO:end:badges -->
@@ -18,6 +19,7 @@ GitLab endpoints.
 
 [GitHub namespace](https://github.com/orgs/OpenOS-Project-OSP/repositories) ·
 [GitLab namespace](https://gitlab.com/openos-project) ·
+[Documentation](https://openos-project-osp.github.io/OpenOS-Project-OSP/) ·
 [OpenOS Project links](https://linktr.ee/OpenOS_Project)
 
 ## Role
@@ -75,25 +77,35 @@ hosted project.
 
 ## OpenCollective support-tier template
 
-The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
-connects financial contributions to named purposes. For OSP, the
-[current tiers](https://opencollective.com/openos-project/contribute) map to
-operational responsibilities as follows:
+<!-- SUPPORT-TIERS:START -->
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project) connects transparent
+contributions to named public purposes. Its
+[current contribution options](https://opencollective.com/openos-project/contribute) remain
+the source of truth for live offerings.
 
-| Tier family | OSP responsibility |
+This operational-continuity view maps contribution purposes to OSP responsibilities.
+A tier is a contribution purpose—not a rank, entitlement, governance role,
+security clearance, or access level.
+
+### Contribution-purpose summary
+
+| Tier family | Supported public work |
 |---|---|
-| Operations | Hosting, self-hosted services, continuity, and maintenance |
-| Engineering | Core R&D, releases, UI/UX, applications, and supporting technology |
-| Contributor enablement | Development hardware, project support, and contracted maintenance |
-| Community infrastructure | Operational planning for facilities and essential services |
-| Shared logistics | Distribution, shipping, and costs shared with OOC |
+| Continuity infrastructure | Mirrors, hosting, storage, recovery, deployment, and self-hosted services |
+| Engineering operations | Automation, releases, supporting technologies, and maintenance |
+| Contributor operations | User support, development hardware, and contracted work |
+| Resilient infrastructure | Environmental and long-term operational proposals |
+| Shared logistics | Distribution, shipping, and cross-namespace operational costs |
 
-Each tier description should declare its scope, objective, eligible costs,
-allocation, cadence, public evidence, dependencies, and status. A tier is a
-contribution purpose—not a rank, entitlement, governance role, security
-clearance, or access level. The live OpenCollective listing remains authoritative
-for availability, wording, amounts, fulfillment, and financial terms; support
-does not guarantee delivery of a proposal, service, or benefit.
+The live OpenCollective listing is authoritative for availability, wording, amounts, fulfillment, and financial terms.
+A contribution expresses support for the stated purpose; it does not
+purchase governance authority or guarantee delivery of a proposal, service,
+or benefit.
+
+This factual operational block is generated from the canonical structured
+support-tier configuration.
+Fictional tier narratives remain exclusively under `characters/lore/`.
+<!-- SUPPORT-TIERS:END -->
 
 ## Creative identity
 
@@ -108,3 +120,4 @@ works and do not assert real-world affiliations, operations, or identities.
 - GitHub: [OpenOS-Project-OSP](https://github.com/OpenOS-Project-OSP)
 - GitLab: [openos-project](https://gitlab.com/openos-project)
 - Project links: [OpenOS_Project](https://linktr.ee/OpenOS_Project)
+- Repository guidance: [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Accessibility](ACCESSIBILITY.md)

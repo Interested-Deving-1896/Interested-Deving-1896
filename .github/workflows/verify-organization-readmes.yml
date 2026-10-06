@@ -16,14 +16,50 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: osp
+            owner: OpenOS-Project-OSP
+            repositories: OpenOS-Project-OSP,.github
+          - profile: ooc
+            owner: OpenOS-Project-Ecosystem-OOC
+            repositories: OpenOS-Project-Ecosystem-OOC,.github
     steps:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - name: Validate canonical templates
-        run: python3 scripts/profile_readmes.py validate
+        run: |
+          python3 scripts/profile_readmes.py validate
+          python3 scripts/profile_readmes.py generate-docs --check
+          python3 scripts/profile_readmes.py generate-tiers --check
 
-      - name: Compare all destination files
+      - name: Select verification credential
+        id: auth
         env:
-          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN || github.token }}
-        run: python3 scripts/profile_readmes.py sync --check
+          PROFILE_SYNC_APP_ID: ${{ vars.PROFILE_SYNC_APP_ID }}
+          PROFILE_SYNC_PRIVATE_KEY: ${{ secrets.PROFILE_SYNC_PRIVATE_KEY }}
+        run: |
+          if [[ -n "$PROFILE_SYNC_APP_ID" && -n "$PROFILE_SYNC_PRIVATE_KEY" ]]; then
+            echo "app=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "app=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create destination-scoped GitHub App token
+        id: app-token
+        if: steps.auth.outputs.app == 'true'
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.PROFILE_SYNC_APP_ID }}
+          private-key: ${{ secrets.PROFILE_SYNC_PRIVATE_KEY }}
+          owner: ${{ matrix.owner }}
+          repositories: ${{ matrix.repositories }}
+          permission-contents: read
+
+      - name: Compare destination files
+        env:
+          PROFILE_SYNC_TOKEN: ${{ steps.app-token.outputs.token || (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) || secrets.PROFILE_SYNC_TOKEN || github.token }}
+        run: python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}" --check

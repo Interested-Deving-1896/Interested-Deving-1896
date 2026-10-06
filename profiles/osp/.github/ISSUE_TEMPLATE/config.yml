@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/security/advisories/new
+    about: Report a vulnerability privately; do not disclose it in a public issue.
+  - name: OpenOS Project funding
+    url: https://opencollective.com/openos-project
+    about: Review current contribution options and financial information.
+  - name: OpenOS Project links
+    url: https://linktr.ee/OpenOS_Project
+    about: Find wider project channels and cross-forge resources.

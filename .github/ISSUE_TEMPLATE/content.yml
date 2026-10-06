@@ -1,0 +1,51 @@
+name: Profile or documentation change
+description: Report incorrect, stale, missing, or confusing profile content.
+title: "[Content]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve the Interested-Deving-1896 profile and documentation.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Interested-Deving-1896 profile
+        - OSP profile template
+        - OOC profile template
+        - Generated documentation
+        - Mirror or provenance information
+        - Fictional lore labeling
+        - Other documentation
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Link to or name the affected page or file.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs to change?
+      description: Explain the current problem and the result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested wording or approach
+      description: Optional. Avoid including secrets or sensitive personal information.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched for an existing issue about this change.
+          required: true
+        - label: This report does not contain a security vulnerability or private information.
+          required: true

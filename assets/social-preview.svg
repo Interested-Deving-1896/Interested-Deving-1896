@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Interested-Deving-1896 social preview</title>
+  <desc id="desc">Open engineering workspace. Sync, mirror, automate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a33"/><stop offset="1" stop-color="#1261a0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="28" fill="url(#grid)"/>
+  <circle cx="1110" cy="110" r="210" fill="#42bff5" opacity=".14"/>
+  <circle cx="1180" cy="580" r="260" fill="#36d399" opacity=".10"/>
+  <text x="88" y="245" fill="#d9f3ff" font-family="system-ui, sans-serif" font-size="30" font-weight="600" letter-spacing="4">OPEN ENGINEERING WORKSPACE</text>
+  <text x="84" y="350" fill="#ffffff" font-family="system-ui, sans-serif" font-size="72" font-weight="750">Interested-Deving-1896</text>
+  <text x="88" y="442" fill="#a8dcf7" font-family="system-ui, sans-serif" font-size="38">Sync · Mirror · Automate</text>
+  <path d="M88 510H510" stroke="#42bff5" stroke-width="8" stroke-linecap="round"/>
+</svg>

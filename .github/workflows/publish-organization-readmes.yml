@@ -6,6 +6,7 @@ on:
     paths:
       - 'profiles/**'
       - 'config/profile-targets.json'
+      - 'config/support-tiers.json'
       - 'scripts/profile_readmes.py'
       - 'scripts/readme_ai.py'
       - 'scripts/readme_policy.py'
@@ -36,9 +37,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
@@ -47,28 +48,75 @@ jobs:
         run: |
           python3 scripts/profile_readmes.py validate
           python3 scripts/profile_readmes.py generate-docs --check
+          python3 scripts/profile_readmes.py generate-tiers --check
 
-      - name: Check publication credential
-        id: credential
+  publish:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: osp
+            owner: OpenOS-Project-OSP
+            repositories: OpenOS-Project-OSP,.github
+          - profile: ooc
+            owner: OpenOS-Project-Ecosystem-OOC
+            repositories: OpenOS-Project-Ecosystem-OOC,.github
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Select publication credential
+        id: auth
         env:
-          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+          PROFILE_SYNC_APP_ID: ${{ vars.PROFILE_SYNC_APP_ID }}
+          PROFILE_SYNC_PRIVATE_KEY: ${{ secrets.PROFILE_SYNC_PRIVATE_KEY }}
+          PROFILE_SYNC_SCOPED_TOKEN: ${{ (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) }}
+          PROFILE_SYNC_LEGACY_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
         run: |
-          if [[ -n "$PROFILE_SYNC_TOKEN" ]]; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
+          if [[ -n "$PROFILE_SYNC_APP_ID" && -n "$PROFILE_SYNC_PRIVATE_KEY" ]]; then
+            echo "mode=app" >> "$GITHUB_OUTPUT"
+          elif [[ -n "$PROFILE_SYNC_SCOPED_TOKEN" ]]; then
+            echo "mode=scoped-fallback-token" >> "$GITHUB_OUTPUT"
+            echo "::warning::Using organization-scoped token fallback. Prefer the repository-scoped GitHub App."
+          elif [[ -n "$PROFILE_SYNC_LEGACY_TOKEN" ]]; then
+            echo "mode=legacy-fallback-token" >> "$GITHUB_OUTPUT"
+            echo "::warning::Using broad legacy PROFILE_SYNC_TOKEN fallback. Replace it with the GitHub App or per-organization tokens."
           else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::PROFILE_SYNC_TOKEN is not configured; publication skipped."
+            echo "mode=none" >> "$GITHUB_OUTPUT"
+            echo "::notice::Configure PROFILE_SYNC_APP_ID and PROFILE_SYNC_PRIVATE_KEY; publication skipped."
           fi
 
-      - name: Publish allowlisted README files
-        if: steps.credential.outputs.available == 'true'
+      # Install one narrowly scoped App in each destination organization. Grant
+      # Contents: write and Workflows: write only for the named README and
+      # organization .github repositories. PROFILE_SYNC_OSP_TOKEN and
+      # PROFILE_SYNC_OOC_TOKEN are safer per-owner fallbacks: each should be a
+      # fine-grained token restricted to that owner's two destination repositories
+      # with Contents: write and Workflows: write. PROFILE_SYNC_TOKEN remains only
+      # for backwards compatibility and may require broader cross-owner access.
+      - name: Create destination-scoped GitHub App token
+        id: app-token
+        if: steps.auth.outputs.mode == 'app'
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.PROFILE_SYNC_APP_ID }}
+          private-key: ${{ secrets.PROFILE_SYNC_PRIVATE_KEY }}
+          owner: ${{ matrix.owner }}
+          repositories: ${{ matrix.repositories }}
+          permission-contents: write
+          permission-workflows: write
+
+      - name: Publish allowlisted profile files
+        if: steps.auth.outputs.mode != 'none'
         env:
-          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+          PROFILE_SYNC_TOKEN: ${{ steps.app-token.outputs.token || (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) || secrets.PROFILE_SYNC_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then
-            python3 scripts/profile_readmes.py sync --dry-run
+            python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}" --dry-run
           else
-            python3 scripts/profile_readmes.py sync
-            python3 scripts/profile_readmes.py sync --check
+            python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}"
+            python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}" --check
           fi

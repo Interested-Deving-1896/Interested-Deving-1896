@@ -154,26 +154,22 @@ or hidden influence.
 
 ## OpenCollective support-tier template
 
-The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
-provides a transparent contribution layer alongside the technical source,
-operational-continuity, and ecosystem layers. Its
-[current contribution options](https://opencollective.com/openos-project/contribute)
-span infrastructure, research and development, releases, UI/UX, application
-repositories, contributor hardware and support, sustainability, community
-facilities, and shared logistics.
+<!-- SUPPORT-TIERS:START -->
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project) connects transparent
+contributions to named public purposes. Its
+[current contribution options](https://opencollective.com/openos-project/contribute) remain
+the source of truth for live offerings.
 
-The later tier inquiry from the Gemini discussion is applied here in its
-constructive form: a transparent funding taxonomy with explicit scope,
-accountability, and boundaries, kept separate from the fictional narrative.
+This source-workspace view groups contribution purposes by the public work they support across the OpenOS Project mirror chain.
+A tier is a contribution purpose—not a rank, entitlement, governance role,
+security clearance, or access level.
 
-Here, a **tier** is a designated contribution purpose—not a rank, entitlement,
-governance role, security clearance, or level of access. New and revised tiers
-should use this reusable description template:
+### Required tier metadata
 
 | Field | Required description |
 |---|---|
-| Scope | OSP, OOC, or shared cross-namespace work |
-| Objective | The concrete outcome the tier is intended to support |
+| Scope | The source, OSP, OOC, or shared cross-namespace work covered |
+| Objective | The concrete public outcome the contribution purpose is intended to support |
 | Eligible costs | The infrastructure, labor, hardware, services, or materials covered |
 | Allocation | How contributions are assigned when more than one layer benefits |
 | Cadence | One-time, recurring, milestone-based, or continuing support |
@@ -181,10 +177,9 @@ should use this reusable description template:
 | Dependencies | Funding thresholds, partners, approvals, or delivery constraints |
 | Status | Proposed, active, paused, fulfilled, or retired |
 
-For README navigation, the live tiers can be summarized without duplicating
-their changeable prices or terms:
+### Contribution-purpose summary
 
-| Tier family | Examples of supported work |
+| Tier family | Supported public work |
 |---|---|
 | Operations | Hosting, self-hosted services, continuity, and maintenance |
 | Engineering | R&D, releases, UI/UX, applications, and supporting technologies |
@@ -193,10 +188,15 @@ their changeable prices or terms:
 | Community infrastructure | Community spaces, essential services, and mobility initiatives |
 | Logistics | Distribution, shipping, and costs shared across tier families |
 
-The OpenCollective page remains the source of truth for availability, wording,
-amounts, fulfillment, and financial terms. A contribution expresses support for
-the stated purpose; it does not purchase governance authority or guarantee that
-a proposal, service, or benefit will be delivered.
+The live OpenCollective listing is authoritative for availability, wording, amounts, fulfillment, and financial terms.
+A contribution expresses support for the stated purpose; it does not
+purchase governance authority or guarantee delivery of a proposal, service,
+or benefit.
+
+This factual operational block is generated from the canonical structured
+support-tier configuration.
+Fictional tier narratives remain exclusively under `characters/lore/`.
+<!-- SUPPORT-TIERS:END -->
 
 ## Mascot and digital cosplay 📖
 
@@ -223,3 +223,4 @@ The Mirrorchain has two fictional creative representatives:
 - GitHub: [@Interested-Deving-1896](https://github.com/Interested-Deving-1896)
 - OpenOS Project links: [linktr.ee/OpenOS_Project](https://linktr.ee/OpenOS_Project)
 - Contributions: use the issue tracker or pull requests in the relevant source repository
+- Repository guidance: [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Accessibility](ACCESSIBILITY.md)

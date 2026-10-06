@@ -3,6 +3,7 @@
 <!-- README-AUTO:start:badges -->
 [![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--Ecosystem--OOC-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-Ecosystem-OOC)
 [![GitLab ecosystem](https://img.shields.io/badge/GitLab-openos--project--ooc--ecosystem-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project-ooc-ecosystem)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://openos-project-ecosystem-ooc.github.io/OpenOS-Project-Ecosystem-OOC/)
 [![README quality](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml)
 [![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
 <!-- README-AUTO:end:badges -->
@@ -18,6 +19,7 @@ across different Git forges.
 
 [GitHub namespace](https://github.com/orgs/OpenOS-Project-Ecosystem-OOC/repositories) ·
 [GitLab namespace](https://gitlab.com/openos-project-ooc-ecosystem) ·
+[Documentation](https://openos-project-ecosystem-ooc.github.io/OpenOS-Project-Ecosystem-OOC/) ·
 [OpenOS Project links](https://linktr.ee/OpenOS_Project)
 
 ## Role
@@ -76,12 +78,19 @@ hosted project.
 
 ## OpenCollective support-tier template
 
-The [OpenOS Project OpenCollective](https://opencollective.com/openos-project)
-connects financial contributions to named purposes. For OOC, the
-[current tiers](https://opencollective.com/openos-project/contribute) map to
-ecosystem responsibilities as follows:
+<!-- SUPPORT-TIERS:START -->
+The [OpenOS Project OpenCollective](https://opencollective.com/openos-project) connects transparent
+contributions to named public purposes. Its
+[current contribution options](https://opencollective.com/openos-project/contribute) remain
+the source of truth for live offerings.
 
-| Tier family | OOC responsibility |
+This ecosystem view maps contribution purposes to OOC responsibilities.
+A tier is a contribution purpose—not a rank, entitlement, governance role,
+security clearance, or access level.
+
+### Contribution-purpose summary
+
+| Tier family | Supported public work |
 |---|---|
 | Ecosystem engineering | Distributions, applications, UI/UX, integrations, and shared R&D |
 | Discovery and federation | Cross-project initiatives and One-Open-Collective relationships |
@@ -89,12 +98,15 @@ ecosystem responsibilities as follows:
 | Sustainability | Environmental, social, and long-term ecosystem support proposals |
 | Shared operations | Infrastructure, maintenance, distribution, and logistics shared with OSP |
 
-Each tier description should declare its scope, objective, eligible costs,
-allocation, cadence, public evidence, dependencies, and status. A tier is a
-contribution purpose—not a rank, entitlement, governance role, security
-clearance, or access level. The live OpenCollective listing remains authoritative
-for availability, wording, amounts, fulfillment, and financial terms; support
-does not guarantee delivery of a proposal, service, or benefit.
+The live OpenCollective listing is authoritative for availability, wording, amounts, fulfillment, and financial terms.
+A contribution expresses support for the stated purpose; it does not
+purchase governance authority or guarantee delivery of a proposal, service,
+or benefit.
+
+This factual operational block is generated from the canonical structured
+support-tier configuration.
+Fictional tier narratives remain exclusively under `characters/lore/`.
+<!-- SUPPORT-TIERS:END -->
 
 ## Creative identity
 
@@ -110,3 +122,4 @@ identities.
 - GitHub: [OpenOS-Project-Ecosystem-OOC](https://github.com/OpenOS-Project-Ecosystem-OOC)
 - GitLab: [openos-project-ooc-ecosystem](https://gitlab.com/openos-project-ooc-ecosystem)
 - Project links: [OpenOS_Project](https://linktr.ee/OpenOS_Project)
+- Repository guidance: [Contributing](CONTRIBUTING.md) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Accessibility](ACCESSIBILITY.md)

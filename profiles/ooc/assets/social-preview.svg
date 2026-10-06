@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">OpenOS-Project-Ecosystem-OOC social preview</title>
+  <desc id="desc">Connecting the wider OpenOS ecosystem. Connect, discover, interoperate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#24104f"/><stop offset="1" stop-color="#5f3dc4"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="640" rx="28" fill="url(#grid)"/>
+  <circle cx="1115" cy="115" r="215" fill="#66d9e8" opacity=".16"/>
+  <circle cx="1190" cy="585" r="270" fill="#da77f2" opacity=".11"/>
+  <text x="88" y="220" fill="#d0ebff" font-family="system-ui, sans-serif" font-size="30" font-weight="600" letter-spacing="4">OPENOS ECOSYSTEM</text>
+  <text x="84" y="322" fill="#ffffff" font-family="system-ui, sans-serif" font-size="58" font-weight="750">OpenOS-Project-Ecosystem-OOC</text>
+  <text x="88" y="415" fill="#e5dbff" font-family="system-ui, sans-serif" font-size="38">Connect · Discover · Interoperate</text>
+  <path d="M88 485H510" stroke="#66d9e8" stroke-width="8" stroke-linecap="round"/>
+</svg>
