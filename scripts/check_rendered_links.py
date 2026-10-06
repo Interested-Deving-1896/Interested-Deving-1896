@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
@@ -127,16 +128,23 @@ def check_external_url(url: str, timeout: float) -> str | None:
             "User-Agent": "Mozilla/5.0 rendered-documentation-link-audit",
         },
     )
-    try:
-        with urlopen(request, timeout=timeout) as response:
-            response.read(1)
-            if response.status >= 400:
-                return f"HTTP {response.status}"
-    except HTTPError as exc:
-        return f"HTTP {exc.code}"
-    except (OSError, URLError, TimeoutError) as exc:
-        return f"{type(exc).__name__}: {exc}"
-    return None
+    last_error = "request failed"
+    for attempt in range(3):
+        try:
+            with urlopen(request, timeout=timeout) as response:
+                response.read(1)
+                if response.status < 400:
+                    return None
+                last_error = f"HTTP {response.status}"
+        except HTTPError as exc:
+            last_error = f"HTTP {exc.code}"
+            if exc.code not in {429, 500, 502, 503, 504}:
+                return last_error
+        except (OSError, URLError, TimeoutError) as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+        if attempt < 2:
+            time.sleep(0.5 * (attempt + 1))
+    return last_error
 
 
 def validate_external(urls: set[str], timeout: float) -> list[str]:
