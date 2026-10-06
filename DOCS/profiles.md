@@ -72,6 +72,13 @@ endpoint and the secret `README_AI_TOKEN`; `README_AI_MODEL` may override the
 model declared in the local policy. Generated content is an artifact and, when
 requested, a pull request—never a direct update to the default branch.
 
+Opening a proposal pull request uses `README_MAINTENANCE_TOKEN` when present.
+Use a narrowly scoped fine-grained token with Contents and Pull requests
+read/write access to that repository. Without it, the workflow uses the built-in
+token only when the repository permits Actions to create pull requests;
+otherwise it retains the proposal as a downloadable artifact. This keeps the
+broader repository-wide “create and approve pull requests” permission optional.
+
 ## Local commands
 
 ```bash

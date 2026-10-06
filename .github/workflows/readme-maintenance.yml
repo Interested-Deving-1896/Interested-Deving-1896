@@ -52,6 +52,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 0
+          token: ${{ secrets.README_MAINTENANCE_TOKEN || github.token }}
 
       - name: Generate report or proposal
         id: generate
@@ -125,7 +126,8 @@ jobs:
       - name: Open proposal pull request
         if: inputs.open_pull_request && inputs.mode != 'staleness'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.README_MAINTENANCE_TOKEN || github.token }}
+          CUSTOM_MAINTENANCE_TOKEN: ${{ secrets.README_MAINTENANCE_TOKEN }}
           PROPOSAL: ${{ steps.generate.outputs.proposal }}
         run: |
           set -euo pipefail
@@ -143,6 +145,16 @@ jobs:
           if git diff --cached --quiet; then
             echo "No README changes were proposed." >> "$GITHUB_STEP_SUMMARY"
             exit 0
+          fi
+          if [[ -z "$CUSTOM_MAINTENANCE_TOKEN" ]]; then
+            can_create_pr=$(gh api \
+              "repos/$GITHUB_REPOSITORY/actions/permissions/workflow" \
+              --jq '.can_approve_pull_request_reviews')
+            if [[ "$can_create_pr" != "true" ]]; then
+              echo "::notice::Proposal retained as an artifact. Configure README_MAINTENANCE_TOKEN to open pull requests without broadening the repository-wide Actions permission."
+              echo "- Pull request: skipped; \`README_MAINTENANCE_TOKEN\` is not configured" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
           fi
           branch="automation/readme-$MODE-${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
