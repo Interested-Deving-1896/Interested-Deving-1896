@@ -1,0 +1,8 @@
+{
+  "name": "Interested-Deving-1896 documentation",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {}
+  }
+}

@@ -1,0 +1,30 @@
+tasks:
+  install-documentation-tools:
+    name: Install documentation tools
+    command: |
+      if ! command -v mdbook >/dev/null || [ "$(mdbook --version)" != "mdbook v0.4.40" ]; then
+        cargo install mdbook --version 0.4.40 --locked
+      fi
+    triggeredBy:
+      - manual
+      - postDevcontainerStart
+      - prebuild
+
+  validate-profile-documentation:
+    name: Validate profile documentation
+    command: |
+      python3 scripts/profile_readmes.py validate
+      python3 scripts/profile_readmes.py generate-docs --check
+    dependsOn:
+      - install-documentation-tools
+    triggeredBy:
+      - manual
+
+  build-documentation:
+    name: Build documentation
+    command: mdbook build
+    dependsOn:
+      - install-documentation-tools
+      - validate-profile-documentation
+    triggeredBy:
+      - manual
