@@ -61,5 +61,21 @@ jobs:
 
       - name: Compare destination files
         env:
-          PROFILE_SYNC_TOKEN: ${{ steps.app-token.outputs.token || (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) || secrets.PROFILE_SYNC_TOKEN || github.token }}
-        run: python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}" --check
+          PROFILE: ${{ matrix.profile }}
+          PROFILE_SYNC_APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          PROFILE_SYNC_OSP_TOKEN: ${{ secrets.PROFILE_SYNC_OSP_TOKEN }}
+          PROFILE_SYNC_OOC_TOKEN: ${{ secrets.PROFILE_SYNC_OOC_TOKEN }}
+          PROFILE_SYNC_LEGACY_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+          PROFILE_SYNC_READ_TOKEN: ${{ github.token }}
+        run: |
+          if [[ -n "$PROFILE_SYNC_APP_TOKEN" ]]; then
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_APP_TOKEN"
+          elif [[ "$PROFILE" == "osp" && -n "$PROFILE_SYNC_OSP_TOKEN" ]]; then
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_OSP_TOKEN"
+          elif [[ "$PROFILE" == "ooc" && -n "$PROFILE_SYNC_OOC_TOKEN" ]]; then
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_OOC_TOKEN"
+          else
+            PROFILE_SYNC_TOKEN="${PROFILE_SYNC_LEGACY_TOKEN:-$PROFILE_SYNC_READ_TOKEN}"
+          fi
+          export PROFILE_SYNC_TOKEN
+          python3 scripts/profile_readmes.py sync --profile "$PROFILE" --check

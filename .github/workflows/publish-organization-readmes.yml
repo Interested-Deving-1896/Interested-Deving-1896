@@ -71,11 +71,18 @@ jobs:
       - name: Select publication credential
         id: auth
         env:
+          PROFILE: ${{ matrix.profile }}
           PROFILE_SYNC_APP_ID: ${{ vars.PROFILE_SYNC_APP_ID }}
           PROFILE_SYNC_PRIVATE_KEY: ${{ secrets.PROFILE_SYNC_PRIVATE_KEY }}
-          PROFILE_SYNC_SCOPED_TOKEN: ${{ (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) }}
+          PROFILE_SYNC_OSP_TOKEN: ${{ secrets.PROFILE_SYNC_OSP_TOKEN }}
+          PROFILE_SYNC_OOC_TOKEN: ${{ secrets.PROFILE_SYNC_OOC_TOKEN }}
           PROFILE_SYNC_LEGACY_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
         run: |
+          if [[ "$PROFILE" == "osp" ]]; then
+            PROFILE_SYNC_SCOPED_TOKEN="$PROFILE_SYNC_OSP_TOKEN"
+          else
+            PROFILE_SYNC_SCOPED_TOKEN="$PROFILE_SYNC_OOC_TOKEN"
+          fi
           if [[ -n "$PROFILE_SYNC_APP_ID" && -n "$PROFILE_SYNC_PRIVATE_KEY" ]]; then
             echo "mode=app" >> "$GITHUB_OUTPUT"
           elif [[ -n "$PROFILE_SYNC_SCOPED_TOKEN" ]]; then
@@ -111,9 +118,22 @@ jobs:
       - name: Publish allowlisted profile files
         if: steps.auth.outputs.mode != 'none'
         env:
-          PROFILE_SYNC_TOKEN: ${{ steps.app-token.outputs.token || (matrix.profile == 'osp' && secrets.PROFILE_SYNC_OSP_TOKEN) || (matrix.profile == 'ooc' && secrets.PROFILE_SYNC_OOC_TOKEN) || secrets.PROFILE_SYNC_TOKEN }}
+          PROFILE: ${{ matrix.profile }}
+          PROFILE_SYNC_APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          PROFILE_SYNC_OSP_TOKEN: ${{ secrets.PROFILE_SYNC_OSP_TOKEN }}
+          PROFILE_SYNC_OOC_TOKEN: ${{ secrets.PROFILE_SYNC_OOC_TOKEN }}
+          PROFILE_SYNC_LEGACY_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: |
+          if [[ -n "$PROFILE_SYNC_APP_TOKEN" ]]; then
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_APP_TOKEN"
+          elif [[ "$PROFILE" == "osp" ]]; then
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_OSP_TOKEN"
+          else
+            PROFILE_SYNC_TOKEN="$PROFILE_SYNC_OOC_TOKEN"
+          fi
+          PROFILE_SYNC_TOKEN="${PROFILE_SYNC_TOKEN:-$PROFILE_SYNC_LEGACY_TOKEN}"
+          export PROFILE_SYNC_TOKEN
           if [[ "$DRY_RUN" == "true" ]]; then
             python3 scripts/profile_readmes.py sync --profile "${{ matrix.profile }}" --dry-run
           else
