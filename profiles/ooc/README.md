@@ -1,7 +1,7 @@
 # OpenOS-Project-Ecosystem-OOC
 
 <!-- README-AUTO:start:badges -->
-[![GitHub organization](https://img.shields.io/badge/GitHub-OpenOS--Project--Ecosystem--OOC-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-Ecosystem-OOC)
+[![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--Ecosystem--OOC-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-Ecosystem-OOC)
 [![GitLab ecosystem](https://img.shields.io/badge/GitLab-openos--project--ooc--ecosystem-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project-ooc-ecosystem)
 [![README quality](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml)
 <!-- README-AUTO:end:badges -->
@@ -12,25 +12,42 @@
 
 OpenOS-Project-Ecosystem-OOC is the outward ecosystem layer of the OpenOS
 Project. It supports discovery, integration, and continuity across related
-open-source projects while keeping repository roles and provenance visible.
+open-source work while keeping hosted-project roles and provenance visible
+across different Git forges.
 
-[Repositories](https://github.com/orgs/OpenOS-Project-Ecosystem-OOC/repositories) ·
-[GitLab ecosystem](https://gitlab.com/openos-project-ooc-ecosystem) ·
+[GitHub namespace](https://github.com/orgs/OpenOS-Project-Ecosystem-OOC/repositories) ·
+[GitLab namespace](https://gitlab.com/openos-project-ooc-ecosystem) ·
 [OpenOS Project links](https://linktr.ee/OpenOS_Project)
 
 ## Role
 
-This organization connects projects across the wider ecosystem. It emphasizes
-discoverability, cross-project context, independently verifiable copies, and
-clear attribution. Each repository remains responsible for its own status,
-license, upstream relationship, and contribution instructions.
+This cross-forge namespace connects projects across the wider ecosystem. It
+emphasizes discoverability, cross-project context, independently verifiable
+copies, and clear attribution. Each hosted repository or project remains
+responsible for its own status, license, upstream relationship, and
+contribution instructions.
+
+## Cross-forge terminology
+
+OOC is platform-independent even though each hosting service supplies its own
+account model and vocabulary:
+
+- **Forge** means any Git hosting platform or independently hosted Git service.
+- **Namespace** means OOC's top-level collaborative space: currently a GitHub
+  organization and a GitLab group namespace.
+- **Repository/project** means a hosted unit of source code and its associated
+  collaboration features, regardless of the platform's preferred term.
+
+Other forges may call the same concepts an account, group, team, workspace,
+organization, repository, or project. Those labels do not change OOC's role or
+the provenance and synchronization boundaries of the hosted content.
 
 ## Current focus
 
 | Area | OOC responsibility |
 |---|---|
 | Ecosystem discovery | Make related projects and integrations easier to find |
-| Continuity | Maintain additional repository copies and recovery paths |
+| Continuity | Maintain additional repository/project copies and recovery paths |
 | Integration | Connect Linux, containers, filesystems, automation, accessibility, and AI tooling |
 | Open standards | Encourage portable data, interoperable components, and replaceable services |
 | Documentation | Preserve context, attribution, and accessible project guidance |
@@ -45,8 +62,9 @@ OpenOS-Project-Ecosystem-OOC/<repo>             ecosystem layer
               └──────────► gitlab.com/openos-project-ooc-ecosystem/<subgroup>/<repo>
 ```
 
-Repositories may be synchronized automatically. Before contributing, consult
-the README and contribution guidance in the specific repository.
+Repositories or projects may be synchronized automatically. Before
+contributing, consult the README and contribution guidance in the specific
+hosted project.
 
 ## Working principles
 

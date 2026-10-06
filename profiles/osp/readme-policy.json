@@ -6,6 +6,7 @@
   },
   "required_headings": [
     "Role",
+    "Cross-forge terminology",
     "Current focus",
     "Mirror role",
     "Working principles",
@@ -19,7 +20,7 @@
   ],
   "managed_blocks": {
     "badges": [
-      "[![GitHub organization](https://img.shields.io/badge/GitHub-OpenOS--Project--OSP-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-OSP)",
+      "[![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--OSP-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-OSP)",
       "[![GitLab mirror](https://img.shields.io/badge/GitLab-openos--project-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project)",
       "[![README quality](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml)"
     ]
