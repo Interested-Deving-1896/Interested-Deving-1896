@@ -4,6 +4,12 @@
     "osp": {
       "title": "OpenOS-Project-OSP",
       "source": "profiles/osp/README.md",
+      "policy_source": "profiles/osp/readme-policy.json",
+      "policy_destination": {
+        "repository": "OpenOS-Project-OSP/OpenOS-Project-OSP",
+        "path": "config/readme-policy.json",
+        "branch": "main"
+      },
       "required_identity": "OpenOS-Project-OSP",
       "forbidden_identity": [
         "Interested-Deving-1896",
@@ -25,6 +31,12 @@
     "ooc": {
       "title": "OpenOS-Project-Ecosystem-OOC",
       "source": "profiles/ooc/README.md",
+      "policy_source": "profiles/ooc/readme-policy.json",
+      "policy_destination": {
+        "repository": "OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC",
+        "path": "config/readme-policy.json",
+        "branch": "main"
+      },
       "required_identity": "OpenOS-Project-Ecosystem-OOC",
       "forbidden_identity": [
         "Interested-Deving-1896",
@@ -51,8 +63,13 @@
       ".github/workflows/community-trust.yml",
       ".github/workflows/content-smoke-test.yml",
       ".github/workflows/labeler.yml",
+      ".github/workflows/readme-maintenance.yml",
+      ".github/workflows/readme-preview.yml",
+      ".github/workflows/readme-quality.yml",
       ".github/workflows/repository-audit.yml",
-      ".github/workflows/support-bundle.yml"
+      ".github/workflows/support-bundle.yml",
+      "scripts/readme_ai.py",
+      "scripts/readme_policy.py"
     ],
     "destinations": [
       {

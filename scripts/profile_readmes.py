@@ -41,9 +41,24 @@ def read_manifest(path: Path) -> dict[str, Any]:
     for key, profile in profiles.items():
         if not isinstance(profile, dict):
             raise ProfileError(f"profiles.{key} must be an object")
-        for field in ("title", "source", "required_identity", "destinations"):
+        for field in (
+            "title",
+            "source",
+            "policy_source",
+            "policy_destination",
+            "required_identity",
+            "destinations",
+        ):
             if not profile.get(field):
                 raise ProfileError(f"profiles.{key}.{field} is required")
+        policy_destination = profile["policy_destination"]
+        if not isinstance(policy_destination, dict):
+            raise ProfileError(f"profiles.{key}.policy_destination must be an object")
+        for field in ("repository", "path", "branch"):
+            if not policy_destination.get(field):
+                raise ProfileError(
+                    f"profiles.{key}.policy_destination.{field} is required"
+                )
         if not isinstance(profile["destinations"], list):
             raise ProfileError(f"profiles.{key}.destinations must be a list")
         for destination in profile["destinations"]:
@@ -65,9 +80,11 @@ def read_manifest(path: Path) -> dict[str, Any]:
     if not isinstance(destinations, list) or not destinations:
         raise ProfileError("shared_automation.destinations must be a non-empty list")
     for source in sources:
-        if not isinstance(source, str) or not source.startswith(".github/"):
+        if not isinstance(source, str) or not source.startswith(
+            (".github/", "scripts/")
+        ):
             raise ProfileError(
-                "shared automation sources must be paths below .github/"
+                "shared automation sources must be paths below .github/ or scripts/"
             )
     for destination in destinations:
         if not isinstance(destination, dict):
@@ -139,6 +156,7 @@ def validate(manifest: dict[str, Any]) -> None:
 
     for key, profile in manifest["profiles"].items():
         source = repository_path(profile["source"])
+        policy_source = repository_path(profile["policy_source"])
         markdown_files.append(source)
         try:
             content = source.read_text(encoding="utf-8")
@@ -164,6 +182,17 @@ def validate(manifest: dict[str, Any]) -> None:
                 f"profiles.{key}: expected one named README repo and one .github "
                 f"profile destination, found {len(destinations)}"
             )
+        try:
+            policy = json.loads(policy_source.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"{profile['policy_source']}: cannot read policy: {exc}")
+        else:
+            required = policy.get("identity", {}).get("required", [])
+            if profile["required_identity"] not in required:
+                errors.append(
+                    f"{profile['policy_source']}: policy does not require "
+                    f"{profile['required_identity']!r}"
+                )
 
     portable_identities = {"Interested-Deving-1896"}
     portable_identities.update(
@@ -240,6 +269,26 @@ def generated_document(manifest: dict[str, Any]) -> str:
                 f"| [`{source}`](../../{source}) | "
                 f"[`{repository}`](https://github.com/{repository}) |"
             )
+    lines.extend(
+        [
+            "",
+            "## Repository-specific README policies",
+            "",
+            "Each named README repository receives its own policy; policies are not",
+            "copied across organization boundaries.",
+            "",
+            "| Organization | Canonical policy | Destination |",
+            "|---|---|---|",
+        ]
+    )
+    for profile in manifest["profiles"].values():
+        policy = profile["policy_destination"]
+        lines.append(
+            f"| {profile['title']} | [`{profile['policy_source']}`]"
+            f"(../../{profile['policy_source']}) | "
+            f"[`{policy['repository']}:{policy['path']}`]"
+            f"(https://github.com/{policy['repository']}/blob/{policy['branch']}/{policy['path']}) |"
+        )
     lines.append("")
     return "\n".join(lines)
 
@@ -345,6 +394,35 @@ def sync_profiles(
                 },
             )
             print(f"UPDATED {label}")
+
+        policy_source = repository_path(profile["policy_source"])
+        expected = policy_source.read_text(encoding="utf-8")
+        destination = profile["policy_destination"]
+        repository = destination["repository"]
+        path = destination["path"]
+        branch = destination["branch"]
+        actual, sha = remote_file(repository, path, branch, token)
+        label = f"{repository}:{path}"
+        if actual == expected:
+            print(f"CURRENT {label}")
+        else:
+            drift += 1
+            print(f"DRIFT {label}")
+            if not check and not dry_run:
+                encoded_path = urllib.parse.quote(path, safe="/")
+                url = f"https://api.github.com/repos/{repository}/contents/{encoded_path}"
+                github_request(
+                    "PUT",
+                    url,
+                    token,
+                    {
+                        "message": "ci: synchronize repository README policy",
+                        "content": base64.b64encode(expected.encode()).decode(),
+                        "branch": branch,
+                        **({"sha": sha} if sha else {}),
+                    },
+                )
+                print(f"UPDATED {label}")
 
     for relative_source in manifest["shared_automation"]["sources"]:
         source = repository_path(relative_source)

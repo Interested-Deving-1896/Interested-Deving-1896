@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "required": ["OpenOS-Project-OSP"],
+    "forbidden": ["Interested-Deving-1896", "Interested Deving"]
+  },
+  "required_headings": [
+    "Role",
+    "Current focus",
+    "Mirror role",
+    "Working principles",
+    "Creative identity",
+    "Connect"
+  ],
+  "required_badges": [
+    "GitHub-OpenOS--Project--OSP",
+    "GitLab-openos--project",
+    "actions/workflows/readme-quality.yml/badge.svg"
+  ],
+  "managed_blocks": {
+    "badges": [
+      "[![GitHub organization](https://img.shields.io/badge/GitHub-OpenOS--Project--OSP-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-OSP)",
+      "[![GitLab mirror](https://img.shields.io/badge/GitLab-openos--project-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project)",
+      "[![README quality](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/actions/workflows/readme-quality.yml)"
+    ]
+  },
+  "stale_after_days": 180,
+  "strict_warnings": false,
+  "translation_languages": ["de", "es", "fr", "it"],
+  "ai": {
+    "provider": "openai-compatible",
+    "model": "gpt-4o-mini"
+  }
+}

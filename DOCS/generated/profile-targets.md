@@ -32,7 +32,27 @@ README repositories. They derive repository identity at runtime.
 | [`.github/workflows/content-smoke-test.yml`](../../.github/workflows/content-smoke-test.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
 | [`.github/workflows/labeler.yml`](../../.github/workflows/labeler.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
 | [`.github/workflows/labeler.yml`](../../.github/workflows/labeler.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/readme-maintenance.yml`](../../.github/workflows/readme-maintenance.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/readme-maintenance.yml`](../../.github/workflows/readme-maintenance.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/readme-preview.yml`](../../.github/workflows/readme-preview.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/readme-preview.yml`](../../.github/workflows/readme-preview.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`.github/workflows/readme-quality.yml`](../../.github/workflows/readme-quality.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`.github/workflows/readme-quality.yml`](../../.github/workflows/readme-quality.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
 | [`.github/workflows/repository-audit.yml`](../../.github/workflows/repository-audit.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
 | [`.github/workflows/repository-audit.yml`](../../.github/workflows/repository-audit.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
 | [`.github/workflows/support-bundle.yml`](../../.github/workflows/support-bundle.yml) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
 | [`.github/workflows/support-bundle.yml`](../../.github/workflows/support-bundle.yml) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`scripts/readme_ai.py`](../../scripts/readme_ai.py) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`scripts/readme_ai.py`](../../scripts/readme_ai.py) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+| [`scripts/readme_policy.py`](../../scripts/readme_policy.py) | [`OpenOS-Project-OSP/OpenOS-Project-OSP`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP) |
+| [`scripts/readme_policy.py`](../../scripts/readme_policy.py) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC) |
+
+## Repository-specific README policies
+
+Each named README repository receives its own policy; policies are not
+copied across organization boundaries.
+
+| Organization | Canonical policy | Destination |
+|---|---|---|
+| OpenOS-Project-OSP | [`profiles/osp/readme-policy.json`](../../profiles/osp/readme-policy.json) | [`OpenOS-Project-OSP/OpenOS-Project-OSP:config/readme-policy.json`](https://github.com/OpenOS-Project-OSP/OpenOS-Project-OSP/blob/main/config/readme-policy.json) |
+| OpenOS-Project-Ecosystem-OOC | [`profiles/ooc/readme-policy.json`](../../profiles/ooc/readme-policy.json) | [`OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC:config/readme-policy.json`](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/blob/main/config/readme-policy.json) |

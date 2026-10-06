@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "required": [
+      "Interested-Deving-1896"
+    ],
+    "forbidden": []
+  },
+  "required_headings": [
+    "Open engineering workspace",
+    "Current focus",
+    "Start here",
+    "Ecosystem documentation",
+    "Fork-Sync-All mirror chain 🪞",
+    "Working principles",
+    "Digital sovereignty with KDE",
+    "Mascot and digital cosplay 📖",
+    "Connect"
+  ],
+  "required_badges": [
+    "ona.com/build-with-ona.svg",
+    "actions/workflows/validate-readmes.yml/badge.svg",
+    "actions/workflows/docs.yml/badge.svg",
+    "actions/workflows/repository-audit.yml/badge.svg",
+    "actions/workflows/readme-quality.yml/badge.svg",
+    "kde.org/for/digital-sovereignty/"
+  ],
+  "managed_blocks": {
+    "badges": [
+      "[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/Interested-Deving-1896)",
+      "[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://interested-deving-1896.github.io/Interested-Deving-1896/)",
+      "[![Validate profile READMEs](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/validate-readmes.yml)",
+      "[![Build documentation](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/docs.yml)",
+      "[![Repository audit](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/repository-audit.yml)",
+      "[![README quality](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/Interested-Deving-1896/Interested-Deving-1896/actions/workflows/readme-quality.yml)",
+      "[![KDE Digital Sovereignty](https://img.shields.io/badge/KDE-digital%20sovereignty-1d99f3?logo=kde&logoColor=white&style=flat-square)](https://kde.org/for/digital-sovereignty/)",
+      "[![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)",
+      "[![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)"
+    ]
+  },
+  "stale_after_days": 180,
+  "strict_warnings": false,
+  "translation_languages": ["de", "es", "fr", "it"],
+  "ai": {
+    "provider": "openai-compatible",
+    "model": "gpt-4o-mini"
+  }
+}

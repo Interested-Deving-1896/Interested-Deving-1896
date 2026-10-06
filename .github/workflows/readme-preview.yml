@@ -1,0 +1,148 @@
+name: README rendered preview
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'config/readme-policy.json'
+      - '.github/workflows/readme-preview.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'config/readme-policy.json'
+      - '.github/workflows/readme-preview.yml'
+  workflow_dispatch:
+    inputs:
+      accessible_formats:
+        description: Generate audio and Unified English Braille artifacts
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: readme-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          persist-credentials: false
+
+      - name: Render GitHub-flavored Markdown
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          mkdir -p readme-preview
+          jq -Rs --arg context "$REPOSITORY" \
+            '{text: ., mode: "gfm", context: $context}' README.md \
+            > "$RUNNER_TEMP/markdown-request.json"
+          curl -fsS \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/markdown \
+            --data-binary @"$RUNNER_TEMP/markdown-request.json" \
+            > readme-preview/fragment.html
+
+      - name: Build responsive preview and plain text
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import html
+          import os
+          import re
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          fragment = Path("readme-preview/fragment.html").read_text(encoding="utf-8")
+          title = html.escape(os.environ["REPOSITORY"])
+          page = f"""<!doctype html>
+          <html lang="en"><head><meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>{title} README preview</title>
+          <style>
+          :root {{ color-scheme: light dark; }}
+          body {{ margin: 0; font: 16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }}
+          main {{ box-sizing: border-box; max-width: 1012px; margin: 0 auto; padding: 32px; overflow-wrap: anywhere; }}
+          img {{ max-width: 100%; height: auto; }}
+          pre {{ padding: 16px; overflow: auto; background: rgba(127,127,127,.12); border-radius: 6px; }}
+          code {{ font-family: ui-monospace,SFMono-Regular,Consolas,monospace; }}
+          table {{ display: block; max-width: 100%; overflow: auto; border-collapse: collapse; }}
+          th, td {{ padding: 6px 13px; border: 1px solid #8c959f; }}
+          a {{ color: #0969da; }}
+          @media (max-width: 480px) {{ main {{ padding: 16px; }} table {{ font-size: 14px; }} }}
+          </style></head><body><main>{fragment}</main></body></html>"""
+          Path("readme-preview/index.html").write_text(page, encoding="utf-8")
+
+          class TextExtractor(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.parts = []
+              def handle_data(self, data):
+                  value = re.sub(r"\s+", " ", data).strip()
+                  if value:
+                      self.parts.append(value)
+
+          parser = TextExtractor()
+          parser.feed(fragment)
+          Path("readme-preview/README.txt").write_text(
+              "\n".join(parser.parts) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Capture desktop and mobile screenshots
+        run: |
+          if ! command -v google-chrome >/dev/null; then
+            echo "::notice::google-chrome is unavailable; HTML preview remains available."
+            exit 0
+          fi
+          python3 -m http.server 18765 --bind 127.0.0.1 --directory readme-preview \
+            >"$RUNNER_TEMP/readme-preview-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for _ in {1..10}; do
+            curl -fsS http://127.0.0.1:18765/index.html >/dev/null && break
+            sleep 1
+          done
+          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+            --window-size=1440,1200 \
+            --screenshot=readme-preview/desktop.png \
+            http://127.0.0.1:18765/index.html
+          google-chrome --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+            --window-size=390,844 \
+            --screenshot=readme-preview/mobile.png \
+            http://127.0.0.1:18765/index.html
+
+      - name: Generate accessible formats
+        if: github.event_name == 'workflow_dispatch' && inputs.accessible_formats
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq espeak-ng python3-louis liblouis-data
+          espeak-ng -v en -s 150 -f readme-preview/README.txt \
+            -w readme-preview/README.audio.wav
+          /usr/bin/python3 - <<'PY'
+          import louis
+          from pathlib import Path
+          source = Path("readme-preview/README.txt").read_text(encoding="utf-8")
+          braille = louis.translateString(["en-ueb-g2.ctb"], source)
+          Path("readme-preview/README.brl").write_text(braille, encoding="utf-8")
+          PY
+
+      - name: Upload preview artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: readme-preview-${{ github.run_id }}
+          path: readme-preview/
+          retention-days: 14
+          if-no-files-found: error

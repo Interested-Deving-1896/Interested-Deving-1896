@@ -1,0 +1,94 @@
+name: README quality gate
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'config/readme-policy.json'
+      - 'scripts/readme_policy.py'
+      - '.github/workflows/readme-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'config/readme-policy.json'
+      - 'scripts/readme_policy.py'
+      - '.github/workflows/readme-quality.yml'
+  schedule:
+    - cron: '37 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      check_external_links:
+        description: Verify external HTTP links
+        required: false
+        default: false
+        type: boolean
+      strict_warnings:
+        description: Treat warnings as failures
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: readme-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Run README policy checks
+        id: quality
+        continue-on-error: true
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CHECK_EXTERNAL: ${{ inputs.check_external_links || 'false' }}
+          STRICT_WARNINGS: ${{ inputs.strict_warnings || 'false' }}
+        run: |
+          args=(quality --report readme-report.json)
+          if [[ "$EVENT_NAME" == "schedule" || "$CHECK_EXTERNAL" == "true" ]]; then
+            args+=(--check-external)
+          fi
+          if [[ "$STRICT_WARNINGS" == "true" ]]; then
+            args+=(--strict)
+          fi
+          python3 scripts/readme_policy.py "${args[@]}"
+
+      - name: Write quality summary
+        if: always()
+        run: |
+          if [[ ! -f readme-report.json ]]; then
+            echo "README report was not generated." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          {
+            echo "## README quality"
+            echo
+            echo "| Metric | Value |"
+            echo "|---|---:|"
+            echo "| Errors | $(jq -r '.summary.errors' readme-report.json) |"
+            echo "| Warnings | $(jq -r '.summary.warnings' readme-report.json) |"
+            echo "| Words | $(jq -r '.statistics.words' readme-report.json) |"
+            echo "| Links | $(jq -r '.statistics.links' readme-report.json) |"
+            echo "| Images | $(jq -r '.statistics.images' readme-report.json) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload machine-readable report
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: readme-quality-${{ github.run_id }}
+          path: readme-report.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Enforce quality result
+        if: steps.quality.outcome != 'success'
+        run: exit 1
