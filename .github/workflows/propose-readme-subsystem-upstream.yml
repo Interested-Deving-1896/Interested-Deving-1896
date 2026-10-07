@@ -1,0 +1,62 @@
+name: Propose README Subsystem Upstream
+
+on:
+  workflow_dispatch:
+    inputs:
+      canonical_ref:
+        description: Fork-Sync-All branch, tag, or commit to compare against
+        required: true
+        default: main
+        type: string
+  pull_request:
+    paths:
+      - 'DOCS/readme-subsystem.md'
+      - 'config/readme-subsystem.json'
+      - 'config/readme-subsystem.lock.json'
+      - 'schema/readme-subsystem.schema.json'
+      - 'scripts/readme-subsystem.py'
+      - 'scripts/readme_policy.py'
+      - 'scripts/check_rendered_links.py'
+      - '.github/workflows/propose-readme-subsystem-upstream.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  proposal:
+    name: Generate review-only patch
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout profile source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Checkout canonical subsystem
+        env:
+          CANONICAL_REF: ${{ inputs.canonical_ref || 'main' }}
+        run: |
+          git clone --filter=blob:none --no-checkout \
+            https://github.com/Interested-Deving-1896/fork-sync-all.git \
+            "$RUNNER_TEMP/fork-sync-all"
+          git -C "$RUNNER_TEMP/fork-sync-all" fetch --depth 1 origin "$CANONICAL_REF"
+          git -C "$RUNNER_TEMP/fork-sync-all" checkout --detach FETCH_HEAD
+
+      - name: Generate upstream proposal
+        env:
+          CANONICAL_ROOT: ${{ runner.temp }}/fork-sync-all
+        run: |
+          python3 "$CANONICAL_ROOT/scripts/readme-subsystem.py" \
+            --config "$CANONICAL_ROOT/config/readme-subsystem.json" \
+            propose-upstream \
+            --canonical-root "$CANONICAL_ROOT" \
+            --profile-root "$GITHUB_WORKSPACE" \
+            --target interested-deving-1896 \
+            --output-dir readme-subsystem-proposal
+
+      - name: Upload review bundle
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: readme-subsystem-upstream-proposal-${{ github.run_id }}
+          path: readme-subsystem-proposal/
+          retention-days: 14
+          if-no-files-found: error
