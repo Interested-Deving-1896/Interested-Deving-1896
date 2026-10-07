@@ -1,11 +1,14 @@
 # OpenOS-Project-Ecosystem-OOC
 
 <!-- README-AUTO:start:badges -->
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC)
 [![GitHub namespace](https://img.shields.io/badge/GitHub-OpenOS--Project--Ecosystem--OOC-181717?logo=github&style=flat-square)](https://github.com/OpenOS-Project-Ecosystem-OOC)
 [![GitLab ecosystem](https://img.shields.io/badge/GitLab-openos--project--ooc--ecosystem-fc6d26?logo=gitlab&logoColor=white&style=flat-square)](https://gitlab.com/openos-project-ooc-ecosystem)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-00aacc?style=flat-square)](https://openos-project-ecosystem-ooc.github.io/OpenOS-Project-Ecosystem-OOC/)
 [![README quality](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml/badge.svg)](https://github.com/OpenOS-Project-Ecosystem-OOC/OpenOS-Project-Ecosystem-OOC/actions/workflows/readme-quality.yml)
 [![OpenCollective tiers](https://img.shields.io/badge/OpenCollective-support%20tiers-7FADF2?logo=opencollective&logoColor=white&style=flat-square)](https://opencollective.com/openos-project/contribute)
+[![KDE Eco](https://img.shields.io/badge/KDE%20Eco-guidance-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/)
+[![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/productworld/software/resources-and-energy-efficient-software-products)
 <!-- README-AUTO:end:badges -->
 
 **Connecting the wider OpenOS ecosystem.**
