@@ -10,6 +10,7 @@
 - [Organization README publication](profiles.md)
 - [Publication targets](generated/profile-targets.md)
 - [Publication authentication and settings](publication-authentication.md)
+- [Forge-neutral README subsystem](readme-subsystem.md)
 
 # Principles and creative work
 

@@ -7,6 +7,8 @@ on:
       - 'profiles/**'
       - 'config/profile-targets.json'
       - 'config/support-tiers.json'
+      - 'config/readme-subsystem.json'
+      - 'DOCS/readme-subsystem.md'
       - 'scripts/profile_readmes.py'
       - 'scripts/check_rendered_links.py'
       - 'scripts/readme_ai.py'

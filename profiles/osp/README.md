@@ -44,6 +44,19 @@ Other forges may call the same concepts an account, group, team, workspace,
 organization, repository, or project. Those labels do not change OSP's role or
 the provenance and synchronization boundaries of the hosted content.
 
+## Forge-neutral README subsystem
+
+OpenOS-Project-OSP consumes reusable policy and rendered-link engines from
+Fork-Sync-All through its profile publication pipeline. Its own README content
+remains OpenOS-Project-OSP-specific. The shared contract calls this hosting
+boundary a **namespace** and this repository a **project**, allowing an
+equivalent GitLab group/subgroup or another forge layout to participate without
+renaming it an organization.
+
+Subsystem files are generated consumers here; reusable changes are contributed
+to Fork-Sync-All and identity changes to the OpenOS-Project-OSP profile source,
+then published forward.
+
 ## Current focus
 
 | Area | OSP responsibility |

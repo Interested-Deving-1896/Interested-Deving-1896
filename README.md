@@ -123,6 +123,20 @@ GitHub organization profile text separately uses each organization's special
 `.github/profile/README.md`. Those profile files contain the same
 organization-specific identity without inheriting this personal profile.
 
+## Forge-neutral README subsystem
+
+Reusable README policy and rendered-link engines are owned by
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all),
+while this repository owns profile content and publishes organization-specific
+outputs to OSP and OOC. The contract uses **namespace**, **project**, and
+**profile surface** so GitHub organizations, GitLab groups/subgroups, and other
+forge layouts can use the same engine without pretending their object models
+are identical.
+
+Every artifact has one owner and moves in one direction. Reusable improvements
+are promoted back to Fork-Sync-All, then reconciled forward through this source
+to the generated consumers. See the [subsystem contract and operating model](DOCS/readme-subsystem.md).
+
 ## Working principles
 
 - Prefer open formats, inspectable automation, and reproducible workflows.

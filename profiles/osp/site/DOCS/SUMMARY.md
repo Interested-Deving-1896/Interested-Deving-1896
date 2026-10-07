@@ -9,3 +9,4 @@
 - [Purpose and scope](purpose-and-scope.md)
 - [Continuity and provenance](continuity-and-provenance.md)
 - [Support and stewardship](support-and-stewardship.md)
+- [Forge-neutral README subsystem](readme-subsystem.md)
