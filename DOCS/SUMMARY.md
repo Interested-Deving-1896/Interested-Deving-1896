@@ -11,6 +11,7 @@
 - [Publication targets](generated/profile-targets.md)
 - [Publication authentication and settings](publication-authentication.md)
 - [Forge-neutral README subsystem](readme-subsystem.md)
+- [Fork-Sync-All documentation mirror](fork-sync-all.md)
 
 # Principles and creative work
 
