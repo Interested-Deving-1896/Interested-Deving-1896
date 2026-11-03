@@ -15,6 +15,7 @@ versioned with the automation source.
 | [Organization README publication](profiles.md) | Template validation, allowlisted destinations, credentials, and local commands |
 | [Digital sovereignty](digital-sovereignty.md) | Practical open-source principles informed by KDE's public guidance |
 | [Automation documentation](https://interested-deving-1896.github.io/fork-sync-all/) | Published reference for the mirror and maintenance control plane |
+| [Locally consumed Fork-Sync-All documentation](fork-sync-all.md) | Index to the imported DOCS/ and docs/ trees, retained under DOCS/upstream/fork-sync-all/ |
 | [Architecture](https://interested-deving-1896.github.io/fork-sync-all/architecture.html) | Three-organization chain, GitLab leg, and data flow |
 | [Workflow reference](https://interested-deving-1896.github.io/fork-sync-all/workflow-triggers.html) | Workflow groups, triggers, schedules, and dependencies |
 | [Organization README repositories](#repository-roles) | Standalone OSP and OOC README repositories and special organization profiles |
