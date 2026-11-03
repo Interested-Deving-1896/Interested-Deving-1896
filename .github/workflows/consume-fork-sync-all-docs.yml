@@ -22,6 +22,7 @@ concurrency:
 jobs:
   sync:
     name: Import canonical automation documentation
+    if: github.repository == format('{0}/{0}', github.repository_owner)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:

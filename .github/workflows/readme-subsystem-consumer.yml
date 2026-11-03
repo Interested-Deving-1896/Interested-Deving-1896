@@ -10,7 +10,6 @@ on:
       - 'scripts/check-markdown-links.py'
       - 'scripts/check_rendered_links.py'
       - 'scripts/readme_policy.py'
-      - '.github/workflows/readme-subsystem-consumer.yml'
   push:
     branches: [main]
     paths:
@@ -36,6 +35,7 @@ concurrency:
 jobs:
   validate:
     name: Validate README subsystem
+    if: github.repository == format('{0}/{0}', github.repository_owner)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

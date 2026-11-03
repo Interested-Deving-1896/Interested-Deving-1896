@@ -38,6 +38,7 @@ concurrency:
 
 jobs:
   propose:
+    if: github.repository == format('{0}/{0}', github.repository_owner)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
