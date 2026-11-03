@@ -22,6 +22,7 @@ concurrency:
 jobs:
   sync:
     name: Import canonical automation documentation
+    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
