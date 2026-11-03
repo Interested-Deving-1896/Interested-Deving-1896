@@ -57,6 +57,7 @@ jobs:
           python3 scripts/profile_readmes.py generate-tiers --check
 
   publish:
+    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 10
