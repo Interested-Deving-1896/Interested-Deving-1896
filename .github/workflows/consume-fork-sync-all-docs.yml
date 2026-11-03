@@ -45,7 +45,7 @@ jobs:
           SOURCE_ROOT: ${{ runner.temp }}/fork-sync-all
         run: |
           set -euo pipefail
-          destination="upstream/fork-sync-all"
+          destination="DOCS/upstream/fork-sync-all"
           mkdir -p "$destination"
           rsync -a --delete "$SOURCE_ROOT/DOCS/" "$destination/DOCS/"
           rsync -a --delete "$SOURCE_ROOT/docs/" "$destination/docs/"
@@ -53,8 +53,8 @@ jobs:
             "repository=Interested-Deving-1896/fork-sync-all" \
             "branch=main" \
             "commit=$(git -C "$SOURCE_ROOT" rev-parse HEAD)" \
-            "DOCS=upstream/fork-sync-all/DOCS" \
-            "docs=upstream/fork-sync-all/docs" \
+            "DOCS=DOCS/upstream/fork-sync-all/DOCS" \
+            "docs=DOCS/upstream/fork-sync-all/docs" \
             > "$destination/SYNC-METADATA.txt"
 
       - name: Open or update documentation import pull request
