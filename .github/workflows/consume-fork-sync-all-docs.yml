@@ -1,0 +1,85 @@
+name: Consume Fork-Sync-All documentation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - 'DOCS/fork-sync-all.md'
+      - 'DOCS/SUMMARY.md'
+      - '.github/workflows/consume-fork-sync-all-docs.yml'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: consume-fork-sync-all-docs
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Import canonical automation documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Checkout both Fork-Sync-All documentation trees
+        env:
+          SOURCE_REPOSITORY: Interested-Deving-1896/fork-sync-all
+        run: |
+          git clone --filter=blob:none --no-checkout \
+            "https://github.com/$SOURCE_REPOSITORY.git" "$RUNNER_TEMP/fork-sync-all"
+          git -C "$RUNNER_TEMP/fork-sync-all" sparse-checkout init --no-cone
+          git -C "$RUNNER_TEMP/fork-sync-all" sparse-checkout set /DOCS/ /docs/
+          git -C "$RUNNER_TEMP/fork-sync-all" checkout main
+
+      - name: Import both source trees without replacing profile documentation
+        env:
+          SOURCE_ROOT: ${{ runner.temp }}/fork-sync-all
+        run: |
+          set -euo pipefail
+          destination="upstream/fork-sync-all"
+          mkdir -p "$destination"
+          rsync -a --delete "$SOURCE_ROOT/DOCS/" "$destination/DOCS/"
+          rsync -a --delete "$SOURCE_ROOT/docs/" "$destination/docs/"
+          printf '%s\n' \
+            "repository=Interested-Deving-1896/fork-sync-all" \
+            "branch=main" \
+            "commit=$(git -C "$SOURCE_ROOT" rev-parse HEAD)" \
+            "DOCS=upstream/fork-sync-all/DOCS" \
+            "docs=upstream/fork-sync-all/docs" \
+            > "$destination/SYNC-METADATA.txt"
+
+      - name: Open or update documentation import pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          BRANCH: automation/fork-sync-all-docs-sync
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git switch --force-create "$BRANCH" origin/main
+          git add upstream/fork-sync-all
+          if git diff --cached --quiet; then
+            echo "Imported Fork-Sync-All documentation is already current."
+            exit 0
+          fi
+          git commit -m "docs: import Fork-Sync-All DOCS and docs trees"
+          git push --force-with-lease origin "HEAD:refs/heads/$BRANCH"
+          existing="$(gh pr list --repo "$REPOSITORY" --head "$BRANCH" --state open --json url --jq '.[0].url // empty')"
+          if [[ -n "$existing" ]]; then
+            echo "Updated $existing"
+          else
+            gh pr create --repo "$REPOSITORY" --base main --head "$BRANCH" \
+              --title "docs: consume Fork-Sync-All documentation trees" \
+              --body "Imports both canonical documentation trees from Interested-Deving-1896/fork-sync-all into upstream/fork-sync-all/DOCS and upstream/fork-sync-all/docs. The profile repository's own DOCS, README, publication workflows, and identity-specific content remain untouched. This is a reviewable snapshot PR; it does not write to either source repository."
+          fi
