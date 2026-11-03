@@ -13,10 +13,6 @@
 - [Forge-neutral README subsystem](readme-subsystem.md)
 - [Fork-Sync-All documentation mirror](fork-sync-all.md)
 
-# Fork-Sync-All documentation
-
-- [Fork-Sync-All documentation mirror](fork-sync-all.md)
-
 # Principles and creative work
 
 - [Digital sovereignty](digital-sovereignty.md)
