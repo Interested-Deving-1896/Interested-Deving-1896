@@ -67,9 +67,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
-          git fetch origin "$BRANCH" || true
+          git fetch origin "$BRANCH:refs/remotes/origin/$BRANCH" || true
           git switch --force-create "$BRANCH" origin/main
-          git add upstream/fork-sync-all
+          git add DOCS/upstream/fork-sync-all
           if git diff --cached --quiet; then
             echo "Imported Fork-Sync-All documentation is already current."
             exit 0
@@ -82,5 +82,5 @@ jobs:
           else
             gh pr create --repo "$REPOSITORY" --base main --head "$BRANCH" \
               --title "docs: consume Fork-Sync-All documentation trees" \
-              --body "Imports both canonical documentation trees from Interested-Deving-1896/fork-sync-all into upstream/fork-sync-all/DOCS and upstream/fork-sync-all/docs. The profile repository's own DOCS, README, publication workflows, and identity-specific content remain untouched. This is a reviewable snapshot PR; it does not write to either source repository."
+              --body "Imports both canonical documentation trees from Interested-Deving-1896/fork-sync-all into DOCS/upstream/fork-sync-all/DOCS and DOCS/upstream/fork-sync-all/docs. The profile repository's own DOCS, README, publication workflows, and identity-specific content remain untouched. This is a reviewable snapshot PR; it does not write to either source repository."
           fi
