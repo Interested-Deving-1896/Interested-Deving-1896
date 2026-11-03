@@ -25,6 +25,7 @@ permissions:
 jobs:
   proposal:
     name: Generate review-only patch
+    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
