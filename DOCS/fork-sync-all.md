@@ -5,8 +5,8 @@ This section consumes both documentation trees from
 
 - [Canonical DOCS index](upstream/fork-sync-all/DOCS/SUMMARY.md)
 - [Fork-Sync-All operations guide](upstream/fork-sync-all/DOCS/OPERATIONS.md)
-- [Workflow reference](../upstream/fork-sync-all/DOCS/workflow-triggers.md)
-- [Imported docs tree](../upstream/fork-sync-all/docs/README.md)
+- [Workflow reference](upstream/fork-sync-all/DOCS/workflow-triggers.md)
+- [Imported docs tree](upstream/fork-sync-all/docs/README.md)
 
 The complete source trees are retained under
 `DOCS/upstream/fork-sync-all/DOCS/` and `DOCS/upstream/fork-sync-all/docs/`. The
