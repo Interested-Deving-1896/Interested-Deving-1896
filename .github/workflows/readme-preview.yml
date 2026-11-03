@@ -29,6 +29,7 @@ concurrency:
 
 jobs:
   preview:
+    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
