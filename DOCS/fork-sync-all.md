@@ -4,7 +4,7 @@ This section consumes both documentation trees from
 [Interested-Deving-1896/fork-sync-all](https://github.com/Interested-Deving-1896/fork-sync-all):
 
 - [Canonical DOCS index](upstream/fork-sync-all/DOCS/SUMMARY.md)
-- [Fork-Sync-All operations guide](../upstream/fork-sync-all/DOCS/OPERATIONS.md)
+- [Fork-Sync-All operations guide](upstream/fork-sync-all/DOCS/OPERATIONS.md)
 - [Workflow reference](../upstream/fork-sync-all/DOCS/workflow-triggers.md)
 - [Imported docs tree](../upstream/fork-sync-all/docs/README.md)
 
