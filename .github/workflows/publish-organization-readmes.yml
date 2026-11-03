@@ -43,7 +43,7 @@ concurrency:
 
 jobs:
   validate:
-    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
+    if: github.repository == format('{0}/{0}', github.repository_owner)
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -57,7 +57,7 @@ jobs:
           python3 scripts/profile_readmes.py generate-tiers --check
 
   publish:
-    if: github.repository == 'Interested-Deving-1896/Interested-Deving-1896'
+    if: github.repository == format('{0}/{0}', github.repository_owner)
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 10
