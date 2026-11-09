@@ -1,0 +1,5 @@
+repository=Interested-Deving-1896/fork-sync-all
+branch=main
+commit=41b568dfa1507648ddb4b49ad1f727014f836c31
+DOCS=DOCS/upstream/fork-sync-all/DOCS
+docs=DOCS/upstream/fork-sync-all/docs
