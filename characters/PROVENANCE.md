@@ -84,3 +84,16 @@ Every published asset should record:
 
 AI-assisted drafts require human review for originality, accessibility,
 fiction labelling, and consistency with this canon before publication.
+
+## Expanded Sovereign Nexus ensemble
+
+A later user-provided Markdown export expanded the fictional persona into **The Sovereign Nexus**, with the optional narrative alias **Elias "Cipher" Vance**. The ideation blended broad archetypal influences from action, espionage, detective, science-fiction, fantasy, legal, and superhero stories. Additional named influences included Henry "Fitz" Fitzgerald (*Ghost Soldier*), Landon Kirby, Frank Castle, and Matt Murdock.
+
+The expanded material also explored fictional analogies involving OpenOS Project, OSP, OOC, KDE digital sovereignty, OpenCollective, Canadian public institutions, CSIS, the Canadian Armed Forces, NATO, and the United Nations. Those thriller premises included covert control, unlawful surveillance, sabotage, money laundering, manipulation of public institutions, and violence. They are fictional tropes only; they are not factual claims about any person, project, platform, government, military, intelligence service, or institution.
+
+The updated [Nexus character study](cosplay/NEXUS.md) retains the useful creative themes—strategic patience, technical imagination, psychological insight, diplomacy, honor, protective loyalty, resilience, due process, and moral restraint—while explicitly rejecting hidden control and unlawful conduct as project values. Real organizations are described only through verified public roles, and no affiliation or covert relationship is implied.
+
+The character's central design test is practical digital sovereignty: inspectability, user choice, portability, revocable permissions, independent review, transparent funding, separated authority, and safe exit paths. The Phoenix motif becomes tested recovery rather than invulnerability; the tactical-protector motif becomes incident readiness and care for affected people; and the Stewardship Ledger remains a fictional transparent public-benefit framework, not a description of real OpenCollective tiers or transactions.
+
+AI-assisted drafts and fan-inspired concepts remain subject to human review for originality, factual accuracy, accessibility, attribution, and clear fiction labelling.
+
